@@ -51,7 +51,7 @@ const Reviews = () => {
         description="HydroFit is being shaped with feedback from early users. These first impressions help us refine the product before wider release."
       />
 
-      <div className="mx-auto max-w-[1600px] px-5  sm:px-8 lg:px-12 pb-16xl:px-16">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 pb-16 xl:px-16">
         {/* Featured review */}
         <div className="border-y border-[#111111]">
           <div className="grid lg:grid-cols-[0.35fr_1.65fr]">

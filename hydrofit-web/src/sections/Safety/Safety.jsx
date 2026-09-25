@@ -43,7 +43,7 @@ const Safety = () => {
         description="HydroFit changes purpose through a defined transformation process. Safety comes first at every stage."
       />
 
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16 pb-16">
         {/* Main warning */}
         <div className="grid overflow-hidden border border-[#111111] lg:grid-cols-[1fr_1.4fr]">
           {/* Left */}

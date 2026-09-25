@@ -218,7 +218,7 @@ const Hero = () => {
           PRODUCT SPECIFICATIONS
       ================================================== */}
       <div className="mx-auto max-w-[1600px] px-5 pb-14 pt-8 sm:px-8 lg:px-12 xl:px-16">
-        <div className="grid border-y border-[#111111] sm:grid-cols-3">
+        <div className="grid border-y border-gray-300 sm:grid-cols-3">
           {productSpecs.map((spec, index) => (
             <div
               key={spec.label}

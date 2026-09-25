@@ -138,7 +138,7 @@ const Concept = () => {
       {/* =========================================================
           THE CONNECTION
       ========================================================= */}
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 pt-16 xl:px-16">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 py-16 xl:px-16">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           {/* Left statement */}
           <div>
