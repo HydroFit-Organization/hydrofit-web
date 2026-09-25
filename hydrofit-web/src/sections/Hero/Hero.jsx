@@ -1,237 +1,248 @@
-import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PRODUCT_IMAGES = [
   "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
   "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
 ];
 
+const productSpecs = [
+  {
+    value: "280",
+    unit: "MM",
+    label: "HEIGHT",
+  },
+  {
+    value: "Ø45",
+    unit: "MM",
+    label: "GRIP",
+  },
+  {
+    value: "100",
+    unit: "MM",
+    label: "MAX DIAMETER",
+  },
+];
+
 const Hero = () => {
   const [activeImage, setActiveImage] = useState(0);
 
+  const previousImage = () => {
+    setActiveImage((current) =>
+      current === 0 ? PRODUCT_IMAGES.length - 1 : current - 1,
+    );
+  };
+
+  const nextImage = () => {
+    setActiveImage((current) =>
+      current === PRODUCT_IMAGES.length - 1 ? 0 : current + 1,
+    );
+  };
+
   return (
-    <section id="home" className="overflow-hidden bg-[#F7F6F2] pt-[112px]">
-      <div className="mx-auto max-w-[1600px] xl:grid xl:min-h-[calc(100svh-112px)] xl:grid-cols-[0.82fr_1.18fr]">
-        {/* =====================================================
-            LEFT — HERO CONTENT
-        ===================================================== */}
-        <div className="flex items-start px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14 lg:px-20 lg:py-16 xl:h-[calc(100svh-112px)] xl:items-center xl:px-12 xl:py-8 2xl:px-16">
-          <div className="w-full max-w-[570px]">
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-[#0B8F63]" />
+    <section id="home" className="overflow-hidden bg-[#F7F6F2] text-[#111111]">
+      {/* ==================================================
+          HERO INTRO
+      ================================================== */}
+      <div className="mx-auto max-w-[1600px] px-5 pb-8 pt-[140px] sm:px-8 sm:pb-10 sm:pt-[150px] lg:px-12 xl:px-16">
+        <div className="text-center">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#77766F]">
+            HYDROFIT ORIGINAL
+          </p>
 
-              <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
-                Hydration × Fitness
-              </span>
-            </div>
+          <h1 className="mx-auto mt-5 max-w-[1050px] font-[Sora] text-[48px] font-semibold leading-[0.9] tracking-[-0.065em] sm:text-[64px] md:text-[76px] lg:text-[88px] xl:text-[100px]">
+            ONE BOTTLE.
+            <br className="sm:hidden" />{" "}
+            <span className="text-[#0B8F63]">TWO PURPOSES.</span>
+          </h1>
 
-            {/* Main Heading */}
-            <h1 className="mt-5 font-[Sora] text-[42px] font-semibold leading-[0.98] tracking-[-0.065em] text-[#111111] sm:text-[50px] md:text-[56px] lg:text-[60px] xl:text-[56px] 2xl:text-[68px]">
-              A bottle
-              <br />
-              with a second
-              <br />
-              <span className="text-[#0B8F63]">purpose.</span>
-            </h1>
-
-            {/* Description */}
-            <p className="mt-5 max-w-[480px] text-[13px] leading-[1.75] text-[#666660] sm:text-[14px] lg:text-[15px]">
-              Start with everyday hydration. When you're ready to train,
-              transform HydroFit into workout equipment through a guided filling
-              and curing process.
-            </p>
-
-            {/* Product Information */}
-            <div className="mt-6 flex items-center gap-5 sm:gap-6">
-              <div>
-                <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#999890]">
-                  Product
-                </p>
-
-                <p className="mt-1 font-[Sora] text-[13px] font-semibold tracking-[-0.025em] text-[#111111] sm:text-[14px]">
-                  HydroFit Original
-                </p>
-              </div>
-
-              <span className="h-9 w-px bg-[#DCDAD3]" />
-
-              <div>
-                <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#999890]">
-                  Availability
-                </p>
-
-                <p className="mt-1 flex items-center gap-2 text-[11px] font-medium text-[#0B8F63] sm:text-[12px]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#0B8F63]" />
-                  Early access
-                </p>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              {/* Primary CTA */}
-              <a
-                href="https://wa.me/YOUR_NUMBER"
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex h-[48px] items-center justify-center gap-2 rounded-[8px] bg-[#111111] px-6 text-[10px] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"
-              >
-                Order on WhatsApp
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1.7}
-                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
-
-              {/* Secondary CTA */}
-              <a
-                href="#transformation"
-                className="inline-flex h-[48px] items-center justify-center rounded-[8px] border border-[#D8D6CF] px-6 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#222222] transition-all duration-300 hover:border-[#111111] hover:bg-white"
-              >
-                Explore the process
-              </a>
-            </div>
-
-            {/* Journey */}
-            <div className="mt-6 border-t border-[#E1DFD8] pt-4">
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                <span className="text-[8px] font-semibold tracking-[0.16em] text-[#AAA9A2]">
-                  01
-                </span>
-
-                <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[#555550] sm:text-[10px]">
-                  Hydrate
-                </span>
-
-                <span className="text-[#B8B7B0]">→</span>
-
-                <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[#555550] sm:text-[10px]">
-                  Transform
-                </span>
-
-                <span className="text-[#B8B7B0]">→</span>
-
-                <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[#555550] sm:text-[10px]">
-                  Train
-                </span>
-              </div>
-            </div>
-          </div>
+          <p className="mx-auto mt-5 max-w-[570px] text-sm leading-6 text-[#5F5E58] sm:text-base sm:leading-7">
+            An everyday water bottle designed around a distinctive form that can
+            later transform into workout equipment.
+          </p>
         </div>
+      </div>
 
-        {/* =====================================================
-            RIGHT — E-COMMERCE PRODUCT GALLERY
-        ===================================================== */}
-        <div className="relative min-h-[520px] overflow-hidden bg-[#F1F0EB] sm:min-h-[580px] md:min-h-[640px] lg:min-h-[680px] xl:h-[calc(100svh-112px)] xl:min-h-[560px]">
-          {/* Top Gallery Controls */}
-          <div className="absolute left-5 right-5 top-5 z-30 flex items-center justify-between sm:left-8 sm:right-8 sm:top-8 xl:left-10 xl:right-10 xl:top-10">
-            {/* Image Counter */}
-            <div className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#777770]">
-              <span className="text-[#111111]">
-                {String(activeImage + 1).padStart(2, "0")}
-              </span>
+      {/* ==================================================
+          PRODUCT SHOWCASE
+      ================================================== */}
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16">
+        <div className="relative min-h-[540px] overflow-hidden border border-[#C8E4EF] bg-[#DDF3FF] sm:min-h-[620px] lg:min-h-[680px]">
+          {/* -----------------------------------------------
+              TECHNICAL BACKGROUND
+          ------------------------------------------------ */}
+          <div className="pointer-events-none absolute inset-0">
+            {/* Large circle */}
+            <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C0E0ED] sm:h-[540px] sm:w-[540px]" />
 
-              <span className="text-[#B5B4AD]">/</span>
+            {/* Medium circle */}
+            <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C8E5F0] sm:h-[400px] sm:w-[400px]" />
 
-              <span>{String(PRODUCT_IMAGES.length).padStart(2, "0")}</span>
-            </div>
+            {/* Small circle */}
+            <div className="absolute left-1/2 top-1/2 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C8E5F0]" />
 
-            {/* Availability */}
-            <span className="border border-[#D7D5CE] bg-[#F7F6F2] px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-[#555550]">
-              Early access
-            </span>
+            {/* Horizontal guide */}
+            <div className="absolute left-0 right-0 top-1/2 border-t border-[#C4E3EE]" />
+
+            {/* Vertical guide */}
+            <div className="absolute bottom-0 left-1/2 top-0 border-l border-[#C4E3EE]" />
+
+            {/* Corner details */}
+            <div className="absolute left-7 top-7 h-8 w-8 border-l border-t border-[#9FCFE1] sm:left-9 sm:top-9 sm:h-10 sm:w-10" />
+
+            <div className="absolute right-7 top-7 h-8 w-8 border-r border-t border-[#9FCFE1] sm:right-9 sm:top-9 sm:h-10 sm:w-10" />
+
+            <div className="absolute bottom-7 left-7 h-8 w-8 border-b border-l border-[#9FCFE1] sm:bottom-9 sm:left-9 sm:h-10 sm:w-10" />
+
+            <div className="absolute bottom-7 right-7 h-8 w-8 border-b border-r border-[#9FCFE1] sm:bottom-9 sm:right-9 sm:h-10 sm:w-10" />
           </div>
 
-          {/* =====================================================
-      PRODUCT IMAGE STAGE
-  ===================================================== */}
-          <div className="absolute inset-x-0 bottom-[116px] -top-20 flex items-center justify-center px-8 pt-16 sm:px-14 sm:pt-16 md:px-20 xl:px-20">
-            {/* Soft Ground Shadow */}
-            <div className="pointer-events-none absolute bottom-[8%] left-1/2 z-0 h-[16px] w-[135px] -translate-x-1/2 rounded-[50%] bg-black/[0.10] blur-[7px] sm:h-[18px] sm:w-[165px] md:h-[20px] md:w-[190px] xl:w-[210px]" />
+          {/* -----------------------------------------------
+              PRODUCT HEADER
+          ------------------------------------------------ */}
+          <div className="absolute left-6 right-6 top-6 z-30 flex items-start justify-between sm:left-8 sm:right-8 sm:top-8 lg:left-10 lg:right-10 lg:top-10">
+            <div>
+              <p className="font-[Sora] text-sm font-semibold tracking-[-0.02em]">
+                HYDROFIT
+              </p>
 
-            {/* Contact Shadow */}
-            <div className="pointer-events-none absolute bottom-[9%] left-1/2 z-0 h-[7px] w-[90px] -translate-x-1/2 rounded-[50%] bg-black/[0.13] blur-[2px] sm:w-[115px] md:w-[135px] xl:w-[150px]" />
+              <p className="mt-1 text-[8px] font-semibold uppercase tracking-[0.17em] text-[#62899A]">
+                Transformable water bottle
+              </p>
+            </div>
 
-            {/* Main Product */}
+            <div className="text-right">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#62899A]">
+                VIEW
+              </p>
+
+              <p className="mt-1 font-[Sora] text-xs font-semibold">
+                {String(activeImage + 1).padStart(2, "0")} /{" "}
+                {String(PRODUCT_IMAGES.length).padStart(2, "0")}
+              </p>
+            </div>
+          </div>
+
+          {/* -----------------------------------------------
+              PRODUCT IMAGE
+          ------------------------------------------------ */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Ground shadow */}
+            <div className="pointer-events-none absolute bottom-[11%] left-1/2 h-[24px] w-[180px] -translate-x-1/2 rounded-[50%] bg-black/[0.15] blur-[10px] sm:w-[230px]" />
+
+            {/* Product light */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/40 blur-[55px] sm:h-[500px] sm:w-[280px]" />
+
             <img
-              key={PRODUCT_IMAGES[activeImage]}
+              key={`${PRODUCT_IMAGES[activeImage]}-${activeImage}`}
               src={PRODUCT_IMAGES[activeImage]}
-              alt={`HydroFit Original product view ${activeImage + 1}`}
-              className="relative z-10 h-auto max-h-[64%] w-auto max-w-[58%] object-contain transition-all duration-500 ease-out sm:max-h-[70%] sm:max-w-[62%] md:max-h-[74%] md:max-w-[58%] xl:max-h-[72%] xl:max-w-[62%] 2xl:max-h-[76%] 2xl:max-w-[64%]"
+              alt={`HydroFit product view ${activeImage + 1}`}
+              className="relative z-10 max-h-[420px] max-w-[62%] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)] transition-all duration-500 sm:max-h-[500px] lg:max-h-[570px]"
             />
           </div>
 
-          {/* =====================================================
-      PRODUCT THUMBNAILS
-  ===================================================== */}
-          <div className="absolute bottom-[128px] left-5 z-30 flex gap-2 sm:left-8 xl:bottom-[132px] xl:left-10">
-            {PRODUCT_IMAGES.map((image, index) => {
-              const isActive = activeImage === index;
+          {/* -----------------------------------------------
+              LEFT PRODUCT LABEL
+          ------------------------------------------------ */}
+          <div className="absolute bottom-8 left-8 z-30 hidden sm:block lg:bottom-10 lg:left-10">
+            <div className="border-l-2 border-[#0B8F63] pl-4">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#62899A]">
+                Designed around
+              </p>
 
-              return (
-                <button
-                  key={image}
-                  type="button"
-                  onClick={() => setActiveImage(index)}
-                  aria-label={`View HydroFit product image ${index + 1}`}
-                  aria-pressed={isActive}
-                  className={`flex h-[48px] w-[48px] items-center justify-center bg-[#F7F6F2] p-1 transition-all duration-300 sm:h-[52px] sm:w-[52px] ${
-                    isActive
-                      ? "border border-[#111111] opacity-100"
-                      : "border border-[#D7D5CE] opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <img
-                    src={image}
-                    alt={`HydroFit product thumbnail ${index + 1}`}
-                    className="h-full w-full object-contain"
-                  />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* =====================================================
-      PRODUCT INFORMATION
-  ===================================================== */}
-          <div className="absolute inset-x-0 bottom-0 z-30 border-t border-[#DAD8D1] bg-[#F7F6F2] px-5 py-4 sm:px-8 sm:py-5 xl:px-10">
-            <div className="flex items-end justify-between gap-4">
-              <div className="min-w-0">
-                <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#999890]">
-                  HydroFit Original
-                </p>
-
-                <h2 className="mt-1 font-[Sora] text-[14px] font-semibold tracking-[-0.035em] text-[#111111] sm:text-[16px]">
-                  One bottle. Two purposes.
-                </h2>
-
-                <div className="mt-2 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B8F63]" />
-
-                  <span className="text-[8px] font-medium uppercase tracking-[0.12em] text-[#0B8F63] sm:text-[9px]">
-                    Available for early access
-                  </span>
-                </div>
-              </div>
-
-              {/* Shop CTA */}
-              <a
-                href="https://wa.me/YOUR_NUMBER"
-                target="_blank"
-                rel="noreferrer"
-                className="group flex h-[40px] shrink-0 items-center gap-2 bg-[#111111] px-4 text-[9px] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-[#0B8F63] sm:h-[42px] sm:px-5"
-              >
-                Shop
-                <ArrowUpRight
-                  size={13}
-                  strokeWidth={1.7}
-                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
+              <p className="mt-1 font-[Sora] text-sm font-semibold">
+                One distinctive form.
+              </p>
             </div>
           </div>
+
+          {/* -----------------------------------------------
+              RIGHT PRODUCT LABEL
+          ------------------------------------------------ */}
+          <div className="absolute bottom-8 right-8 z-30 hidden text-right sm:block lg:bottom-10 lg:right-10">
+            <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#62899A]">
+              Purpose
+            </p>
+
+            <p className="mt-1 font-[Sora] text-sm font-semibold">
+              Hydrate → Transform
+            </p>
+          </div>
+
+          {/* -----------------------------------------------
+              IMAGE CONTROLS
+          ------------------------------------------------ */}
+          <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
+            <button
+              type="button"
+              onClick={previousImage}
+              aria-label="Previous product image"
+              className="flex h-9 w-9 items-center justify-center border border-[#AFCFDD] bg-[#F7F6F2]/90 transition-colors hover:bg-[#111111] hover:text-white"
+            >
+              <ChevronLeft size={15} strokeWidth={1.7} />
+            </button>
+
+            {PRODUCT_IMAGES.map((image, index) => (
+              <button
+                key={`${image}-${index}`}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                aria-label={`View product image ${index + 1}`}
+                className={`h-9 w-9 overflow-hidden border bg-[#F7F6F2]/90 ${
+                  activeImage === index
+                    ? "border-[#111111]"
+                    : "border-[#AFCFDD]"
+                }`}
+              >
+                <img
+                  src={image}
+                  alt=""
+                  className="h-full w-full object-contain"
+                />
+              </button>
+            ))}
+
+            <button
+              type="button"
+              onClick={nextImage}
+              aria-label="Next product image"
+              className="flex h-9 w-9 items-center justify-center border border-[#AFCFDD] bg-[#F7F6F2]/90 transition-colors hover:bg-[#111111] hover:text-white"
+            >
+              <ChevronRight size={15} strokeWidth={1.7} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ==================================================
+          PRODUCT SPECIFICATIONS
+      ================================================== */}
+      <div className="mx-auto max-w-[1600px] px-5 pb-14 pt-8 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid border-y border-[#111111] sm:grid-cols-3">
+          {productSpecs.map((spec, index) => (
+            <div
+              key={spec.label}
+              className={`px-5 py-6 sm:px-7 lg:px-10 ${
+                index !== 0
+                  ? "border-t border-[#DEDCD5] sm:border-l sm:border-t-0"
+                  : ""
+              }`}
+            >
+              <div className="flex items-end gap-2">
+                <p className="font-[Sora] text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
+                  {spec.value}
+                </p>
+
+                <p className="mb-1 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#77766F]">
+                  {spec.unit}
+                </p>
+              </div>
+
+              <p className="mt-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#88877F]">
+                {spec.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

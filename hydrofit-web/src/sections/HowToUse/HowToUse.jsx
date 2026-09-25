@@ -1,51 +1,31 @@
 import React from "react";
-import { ArrowDown, ArrowUpRight, Check } from "lucide-react";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
-const everydaySteps = [
+const steps = [
   {
     number: "01",
-    title: "Fill",
-    description:
-      "Fill HydroFit with drinking water using the bottle's opening and close the cap securely.",
+    title: "USE",
+    text: "Use HydroFit as your everyday water bottle.",
   },
   {
     number: "02",
-    title: "Carry",
-    description:
-      "Use HydroFit as your everyday water bottle and carry it throughout your daily routine.",
+    title: "PREPARE",
+    text: "Clean the bottle and prepare it according to the transformation instructions.",
   },
   {
     number: "03",
-    title: "Hydrate",
-    description:
-      "Drink from HydroFit normally and keep it as part of your everyday hydration routine.",
-  },
-];
-
-const transformationSteps = [
-  {
-    number: "01",
-    title: "Empty",
-    description:
-      "When you're ready to transform HydroFit, completely empty the bottle before beginning the preparation process.",
-  },
-  {
-    number: "02",
-    title: "Clean",
-    description:
-      "Clean the bottle thoroughly and prepare it according to the manufacturer's instructions.",
-  },
-  {
-    number: "03",
-    title: "Fill",
-    description:
-      "Fill the entire HydroFit body with concrete according to the manufacturer's specified process.",
+    title: "FILL",
+    text: "Fill the entire bottle with concrete. Make sure the material reaches all internal sections.",
   },
   {
     number: "04",
-    title: "Cure",
-    description:
-      "Allow the concrete to fully cure before using HydroFit as exercise equipment.",
+    title: "CURE",
+    text: "Allow the concrete to fully cure before handling it as workout equipment.",
+  },
+  {
+    number: "05",
+    title: "TRAIN",
+    text: "Once fully cured, HydroFit is ready for its second purpose.",
   },
 ];
 
@@ -53,234 +33,127 @@ const HowToUse = () => {
   return (
     <section
       id="how-to-use"
-      className="overflow-hidden bg-[#F7F6F2] text-[#111111]"
+      className="scroll-mt-[112px] overflow-hidden bg-[#111111] text-[#F7F6F2]"
     >
-      {/* ==================================================
-          INTRO
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          <div>
-            <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#0B8F63]">
-              06 / How to Use
-            </p>
+      <SectionHeading
+        number="06"
+        label="HOW TO USE"
+        title={
+          <>
+            SIMPLE TO
+            <br />
+            <span className="text-[#63D69E]">TRANSFORM.</span>
+          </>
+        }
+        description="Use HydroFit every day. When you're ready to transform it, follow the preparation, filling, and curing process carefully."
+        className="text-[#F7F6F2]"
+      />
 
-            <h2 className="max-w-[760px] font-[Sora] text-5xl font-semibold leading-[0.94] tracking-[-0.055em] sm:text-6xl md:text-7xl">
-              Simple to start.
-              <br />
-              Designed to transform.
-            </h2>
-          </div>
+      <div className="mx-auto max-w-[1600px] px-5 pb-20 sm:px-8 sm:pb-24 lg:px-12 lg:pb-28 xl:px-16">
+        {/* Visual + Intro */}
+        <div className="grid overflow-hidden border border-white/15 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Image */}
+          <div className="relative min-h-[360px] overflow-hidden bg-[#E9E7DE] sm:min-h-[480px]">
+            <img
+              src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1400&q=85"
+              alt="Reusable water bottle"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
-          <p className="max-w-[480px] text-lg leading-7 text-[#55544E] sm:text-xl lg:ml-auto">
-            HydroFit has two distinct stages. Use it first as your everyday
-            water bottle. Transform it only when you're ready to follow the
-            preparation and curing process.
-          </p>
-        </div>
-      </div>
+            <div className="absolute inset-0 bg-black/[0.08]" />
 
-      {/* ==================================================
-          PHASE 01 — EVERYDAY USE
-      ================================================== */}
-      <div className="border-y border-[#DEDCD5]">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            {/* Phase intro */}
-            <div className="flex min-h-[520px] flex-col justify-between border-b border-[#DEDCD5] p-7 sm:p-10 md:p-14 lg:border-b-0 lg:border-r">
-              <div className="flex items-center justify-between">
-                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                  Phase 01
+            <div className="absolute left-6 top-6 sm:left-8 sm:top-8">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
+
+                <span className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#55544E]">
+                  HYDROFIT / INSTRUCTIONS
                 </span>
-
-                <span className="font-[Sora] text-3xl font-semibold tracking-[-0.04em]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0B8F63]">
-                  Everyday hydration
-                </p>
-
-                <h3 className="font-[Sora] text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl">
-                  Start with
-                  <br />
-                  the bottle.
-                </h3>
-
-                <p className="mt-6 max-w-[430px] text-sm leading-7 text-[#5F5E58] sm:text-base">
-                  Before HydroFit becomes anything else, it is simply your
-                  everyday water bottle.
-                </p>
               </div>
             </div>
 
-            {/* Steps */}
-            <div>
-              {everydaySteps.map((step) => (
-                <div
-                  key={step.number}
-                  className="grid gap-6 border-b border-[#DEDCD5] p-7 last:border-b-0 sm:p-10 md:grid-cols-[70px_0.7fr_1.3fr] md:items-start md:gap-8 md:p-12"
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.16em] text-[#999890]">
-                    {step.number}
-                  </span>
+            <div className="absolute bottom-0 left-0 right-0 border-t border-black/10 bg-[#E9E7DE]/90 px-6 py-5 sm:px-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-[7px] uppercase tracking-[0.18em] text-[#77766F]">
+                    START HERE
+                  </p>
 
-                  <h4 className="font-[Sora] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
-                    {step.title}
-                  </h4>
-
-                  <p className="max-w-[470px] text-sm leading-7 text-[#5F5E58] sm:text-base">
-                    {step.description}
+                  <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em] text-[#111111]">
+                    USE. PREPARE. TRANSFORM.
                   </p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* ==================================================
-          TRANSITION
-      ================================================== */}
-      <div className="flex justify-center px-5 py-14 sm:py-20">
-        <div className="flex flex-col items-center">
-          <span className="mb-5 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-            When you're ready
-          </span>
-
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#CFCDC5]">
-            <ArrowDown size={18} strokeWidth={1.5} className="text-[#0B8F63]" />
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          PHASE 02 — TRANSFORMATION
-      ================================================== */}
-      <div className="border-y border-[#DEDCD5] bg-[#111111] text-[#F7F6F2]">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            {/* Phase intro */}
-            <div className="flex min-h-[560px] flex-col justify-between border-b border-[#33332F] p-7 sm:p-10 md:p-14 lg:border-b-0 lg:border-r">
-              <div className="flex items-center justify-between">
-                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                  Phase 02
-                </span>
-
-                <span className="font-[Sora] text-3xl font-semibold tracking-[-0.04em]">
-                  02
+                <span className="text-[8px] uppercase tracking-[0.18em] text-[#77766F]">
+                  06 / 05
                 </span>
               </div>
-
-              <div>
-                <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#63D69E]">
-                  Transformation
-                </p>
-
-                <h3 className="font-[Sora] text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl">
-                  Then make
-                  <br />
-                  the change.
-                </h3>
-
-                <p className="mt-6 max-w-[430px] text-sm leading-7 text-[#A9A9A2] sm:text-base">
-                  The transformation is a separate process. Prepare the bottle,
-                  fill the entire body, and allow it to fully cure before its
-                  new use.
-                </p>
-              </div>
             </div>
+          </div>
 
-            {/* Transformation steps */}
+          {/* Intro */}
+          <div className="flex flex-col justify-between border-t border-white/15 p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-12">
             <div>
-              {transformationSteps.map((step) => (
-                <div
-                  key={step.number}
-                  className="grid gap-6 border-b border-[#33332F] p-7 last:border-b-0 sm:p-10 md:grid-cols-[70px_0.7fr_1.3fr] md:items-start md:gap-8 md:p-12"
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.16em] text-[#77766F]">
-                    {step.number}
-                  </span>
+              <span className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#63D69E]">
+                BEFORE YOU BEGIN
+              </span>
 
-                  <h4 className="font-[Sora] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
-                    {step.title}
-                  </h4>
-
-                  <p className="max-w-[470px] text-sm leading-7 text-[#A9A9A2] sm:text-base">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          IMPORTANT NOTE
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-20 sm:px-8 md:py-28 lg:px-12 xl:px-16">
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
-              Before training
-            </p>
-          </div>
-
-          <div className="border-t border-[#111111] pt-7">
-            <div className="flex items-start gap-4">
-              <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center border border-[#111111]">
-                <Check size={14} strokeWidth={2} />
-              </div>
-
-              <div>
-                <h3 className="font-[Sora] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
-                  Cure completely before use.
-                </h3>
-
-                <p className="mt-5 max-w-[700px] text-sm leading-7 text-[#5F5E58] sm:text-base">
-                  Do not use HydroFit as exercise equipment until the concrete
-                  has fully cured. Follow the manufacturer's instructions for
-                  preparation, filling, curing, inspection, and first use.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          CLOSING
-      ================================================== */}
-      <div className="border-t border-[#DEDCD5]">
-        <div className="mx-auto max-w-[1600px] px-5 py-20 sm:px-8 md:py-28 lg:px-12 xl:px-16">
-          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
-                Next
-              </p>
-
-              <h3 className="font-[Sora] text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl md:text-6xl">
-                Know the
+              <h3 className="mt-6 max-w-[480px] font-[Sora] text-3xl font-semibold leading-[0.92] tracking-[-0.055em] sm:text-4xl">
+                One bottle.
                 <br />
-                safety first.
+                One defined process.
               </h3>
             </div>
 
-            <a
-              href="#safety"
-              className="group inline-flex w-fit items-center gap-3 border-b border-[#111111] pb-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300 hover:border-[#0B8F63] hover:text-[#0B8F63]"
-            >
-              Read safety guidelines
-              <ArrowUpRight
-                size={15}
-                strokeWidth={1.8}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
+            <p className="mt-10 max-w-[420px] text-sm leading-7 text-[#AAA9A2]">
+              HydroFit is designed to move through its transformation in a
+              controlled sequence. Follow every step before using the
+              transformed product.
+            </p>
           </div>
+        </div>
+
+        {/* Steps */}
+        <div className="mt-4 border-y border-white/15">
+          {steps.map((step, index) => (
+            <div
+              key={step.number}
+              className={`grid grid-cols-[48px_1fr] gap-5 px-5 py-7 sm:grid-cols-[70px_1fr_1fr] sm:px-8 sm:py-8 lg:px-10 ${
+                index !== steps.length - 1 ? "border-b border-white/10" : ""
+              }`}
+            >
+              <span className="font-[Sora] text-sm font-semibold text-[#63D69E]">
+                {step.number}
+              </span>
+
+              <h3 className="font-[Sora] text-lg font-semibold tracking-[-0.035em] sm:text-xl">
+                {step.title}
+              </h3>
+
+              <p className="col-start-2 max-w-[520px] text-xs leading-5 text-[#999890] sm:col-start-3 sm:text-sm">
+                {step.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Important note */}
+        <div className="mt-4 flex flex-col gap-4 border border-[#63D69E]/30 bg-[#0B8F63]/10 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div>
+            <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#63D69E]">
+              IMPORTANT
+            </p>
+
+            <p className="mt-2 max-w-[700px] text-xs leading-5 text-[#B8B7B0] sm:text-sm">
+              Do not use the transformed HydroFit for exercise until the
+              concrete has completely cured and the product is ready according
+              to the manufacturer's instructions.
+            </p>
+          </div>
+
+          <span className="shrink-0 font-[Sora] text-xs font-semibold uppercase tracking-[0.12em] text-[#F7F6F2]">
+            FOLLOW THE PROCESS
+          </span>
         </div>
       </div>
     </section>

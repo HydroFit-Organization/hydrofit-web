@@ -3,22 +3,29 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navItems = [
   {
-    label: "Shop",
-    href: "#product",
-  },
-  {
     label: "How It Works",
     href: "#transformation",
   },
   {
     label: "Product",
-    href: "#product-details",
+    href: "#product",
   },
   {
     label: "FAQ",
     href: "#faq",
   },
+  {
+    label: "Reviews",
+    href: "#reviews",
+  },
 ];
+
+const whatsappMessage =
+  "Hi HydroFit, I'm interested in HydroFit and would like to know more about the product.";
+
+const whatsappUrl = `https://wa.me/8106801326?text=${encodeURIComponent(
+  whatsappMessage,
+)}`;
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -139,7 +146,7 @@ const Navbar = () => {
 
             {/* Order Button */}
             <a
-              href="https://wa.me/YOUR_NUMBER"
+              href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="group flex items-center gap-2 border border-[#111111] bg-[#111111] px-5 py-3 text-[9px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:border-[#0B8F63] hover:bg-[#0B8F63]"

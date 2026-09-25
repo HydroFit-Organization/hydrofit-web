@@ -1,24 +1,26 @@
 import React from "react";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
-const principles = [
+const benefits = [
   {
     number: "01",
-    title: "Hydrate daily.",
-    description:
-      "HydroFit starts with the simplest part of the idea: a bottle designed to be carried, used, and reached for throughout your everyday routine.",
+    title: "EVERYDAY FIRST",
+    text: "HydroFit begins as a bottle designed for everyday hydration.",
   },
   {
     number: "02",
-    title: "One form. Two purposes.",
-    description:
-      "Its distinctive double-ended form creates the foundation for something more. The same object can begin as a water bottle and later transform into workout equipment.",
+    title: "ONE DISTINCT FORM",
+    text: "A double-ended structure creates a recognizable form with a central grip.",
   },
   {
     number: "03",
-    title: "Carry less. Do more.",
-    description:
-      "HydroFit explores a simpler relationship between hydration and training by bringing two uses together in one physical form.",
+    title: "TWO PURPOSES",
+    text: "The same object can move from hydration to training through a defined transformation.",
+  },
+  {
+    number: "04",
+    title: "LESS, BY DESIGN",
+    text: "One adaptable object replaces the need to buy separate products for different uses.",
   },
 ];
 
@@ -26,203 +28,209 @@ const WhyHydroFit = () => {
   return (
     <section
       id="why-hydrofit"
-      className="overflow-hidden bg-[#F7F6F2] text-[#111111]"
+      className="scroll-mt-[112px] overflow-hidden bg-[#F7F6F2] text-[#111111]"
     >
-      {/* ==================================================
-          INTRO
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div>
-            <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#0B8F63]">
-              05 / Why HydroFit
-            </p>
+      <SectionHeading
+        number="05"
+        label="WHY HYDROFIT"
+        title={
+          <>
+            DESIGNED TO
+            <br />
+            <span className="text-[#0B8F63]">DO MORE.</span>
+          </>
+        }
+        description="HydroFit is built around a simple idea: make one well-designed object useful across different stages of your day."
+      />
 
-            <h2 className="max-w-[780px] font-[Sora] text-5xl font-semibold leading-[0.94] tracking-[-0.055em] sm:text-6xl md:text-7xl">
-              More than
-              <br />a water bottle.
-            </h2>
-          </div>
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 pb-16 lg:px-12 xl:px-16">
+        <div className="grid overflow-hidden border-y border-[#DEDCD5] lg:grid-cols-[1fr_1.15fr]">
+          {/* =========================================
+              IMAGE
+          ========================================= */}
 
-          <div className="max-w-[500px] lg:ml-auto">
-            <p className="text-lg leading-7 tracking-[-0.015em] text-[#4F4E49] sm:text-xl">
-              HydroFit is built around one simple idea: create an everyday
-              bottle that can eventually become something useful for training.
-            </p>
-          </div>
-        </div>
-      </div>
+          <div className="relative min-h-[420px] overflow-hidden bg-[#E9E7DE] sm:min-h-[500px] lg:min-h-[560px]">
+            <img
+              src="https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?auto=format&fit=crop&w=1400&q=85"
+              alt="Minimal reusable water bottle"
+              className="
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+                transition-transform
+                duration-700
+                hover:scale-[1.03]
+              "
+            />
 
-      {/* ==================================================
-          FEATURE STATEMENT
-      ================================================== */}
-      <div className="border-y border-[#DEDCD5]">
-        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[1fr_1fr]">
-          {/* Large statement */}
-          <div className="flex min-h-[480px] flex-col justify-between border-b border-[#DEDCD5] p-7 sm:p-10 md:p-14 lg:min-h-[620px] lg:border-b-0 lg:border-r">
-            <div>
-              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                The idea
-              </span>
-            </div>
+            <div className="absolute inset-0 bg-black/[0.04]" />
 
-            <div>
-              <h3 className="max-w-[620px] font-[Sora] text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl md:text-6xl">
-                One object.
-                <br />
-                Different stages.
-              </h3>
+            {/* Image label */}
 
-              <p className="mt-7 max-w-[500px] text-sm leading-7 text-[#5F5E58] sm:text-base">
-                HydroFit is designed around a change in purpose. It begins as
-                something you use every day and, when you're ready, follows a
-                defined process to become exercise equipment.
-              </p>
-            </div>
-          </div>
+            <div className="absolute left-6 top-6 sm:left-8 sm:top-8">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
 
-          {/* Product composition */}
-          <div className="relative flex min-h-[480px] items-center justify-center overflow-hidden bg-[#F1F0EA] p-8 md:min-h-[620px]">
-            {/* Labels */}
-            <div className="absolute left-7 top-7 sm:left-10 sm:top-10">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                HydroFit
-              </span>
-            </div>
-
-            <div className="absolute right-7 top-7 text-right sm:right-10 sm:top-10">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                01 / 02
-              </span>
-            </div>
-
-            {/* Ground shadow */}
-            <div className="pointer-events-none absolute bottom-[17%] left-1/2 h-[22px] w-[190px] -translate-x-1/2 rounded-[50%] bg-black/[0.10] blur-[9px]" />
-
-            {/* Product */}
-            <div className="relative z-10 flex h-[390px] items-center justify-center sm:h-[470px]">
-              <img
-                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png"
-                alt="HydroFit bottle"
-                className="max-h-full max-w-[72%] object-contain drop-shadow-[0_28px_32px_rgba(0,0,0,0.13)]"
-              />
+                <span className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#55544E]">
+                  HYDROFIT / EVERYDAY
+                </span>
+              </div>
             </div>
 
             {/* Bottom label */}
-            <div className="absolute bottom-7 left-7 right-7 flex items-end justify-between sm:bottom-10 sm:left-10 sm:right-10">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#77766F]">
-                Everyday hydration
+
+            <div className="absolute bottom-0 left-0 right-0 border-t border-black/[0.08] bg-[#E9E7DE]/90 px-6 py-5 backdrop-blur-sm sm:px-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-[7px] uppercase tracking-[0.18em] text-[#77766F]">
+                    THE DAILY OBJECT
+                  </p>
+
+                  <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em]">
+                    HYDRATION, REDEFINED.
+                  </p>
+                </div>
+
+                <span className="text-[8px] uppercase tracking-[0.18em] text-[#999890]">
+                  01 / 04
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* =========================================
+              BENEFITS
+          ========================================= */}
+
+          <div className="bg-[#F7F6F2]">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.number}
+                className={`
+                  grid
+                  min-h-[140px]
+                  grid-cols-[48px_1fr]
+                  gap-5
+                  px-6
+                  py-7
+                  sm:grid-cols-[60px_1fr]
+                  sm:px-8
+                  sm:py-8
+                  lg:min-h-[140px]
+                  lg:px-10
+                  ${
+                    index !== benefits.length - 1
+                      ? "border-b border-[#DEDCD5]"
+                      : ""
+                  }
+                `}
+              >
+                {/* Number */}
+
+                <div>
+                  <span className="font-[Sora] text-sm font-semibold tracking-[-0.04em] text-[#0B8F63]">
+                    {benefit.number}
+                  </span>
+                </div>
+
+                {/* Content */}
+
+                <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+                  <h3 className="max-w-[280px] font-[Sora] text-xl font-semibold leading-[0.95] tracking-[-0.045em] sm:text-2xl">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="max-w-[320px] text-xs leading-5 text-[#77766F]">
+                    {benefit.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* =========================================
+            SECONDARY IMAGE STRIP
+        ========================================= */}
+
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {/* Lifestyle */}
+
+          <div className="group relative h-[260px] overflow-hidden bg-[#E9E7DE] sm:h-[320px]">
+            <img
+              src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=85"
+              alt="Reusable water bottle lifestyle"
+              className="
+                h-full
+                w-full
+                object-cover
+                transition-transform
+                duration-700
+                group-hover:scale-[1.04]
+              "
+            />
+
+            <div className="absolute inset-0 bg-black/[0.08]" />
+
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between sm:left-7 sm:right-7">
+              <div>
+                <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-white/65">
+                  BUILT FOR DAILY LIFE
+                </p>
+
+                <p className="mt-1 font-[Sora] text-lg font-semibold tracking-[-0.04em] text-white">
+                  TAKE IT WITH YOU.
+                </p>
+              </div>
+
+              <span className="text-[8px] uppercase tracking-[0.18em] text-white/60">
+                02
+              </span>
+            </div>
+          </div>
+
+          {/* Product detail */}
+
+          <div className="relative flex h-[260px] overflow-hidden bg-[#111111] sm:h-[320px]">
+            <div className="absolute right-0 top-0 h-full w-[55%] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85"
+                alt="Reusable bottle detail"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  opacity-75
+                "
+              />
+
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+
+            <div className="relative z-10 flex w-[60%] flex-col justify-between p-6 sm:p-8">
+              <span className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#63D69E]">
+                HYDROFIT / DESIGN
               </span>
 
-              <ArrowDownRight
-                size={18}
-                strokeWidth={1.5}
-                className="text-[#0B8F63]"
-              />
+              <div>
+                <p className="font-[Sora] text-2xl font-semibold leading-[0.92] tracking-[-0.055em] text-[#F7F6F2] sm:text-3xl">
+                  FORM
+                  <br />
+                  FOLLOWS
+                  <br />
+                  FUNCTION.
+                </p>
+
+                <p className="mt-4 max-w-[230px] text-[9px] leading-4 text-[#999890]">
+                  Every part of HydroFit's form is designed around how the
+                  object is held, used, and transformed.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* ==================================================
-          THREE PRINCIPLES
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="mb-14 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
-              What drives it
-            </p>
-          </div>
-
-          <h3 className="max-w-[760px] font-[Sora] text-3xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-4xl md:text-5xl">
-            A product built around a different way of thinking about everyday
-            objects.
-          </h3>
-        </div>
-
-        <div className="border-t border-[#111111]">
-          {principles.map((item) => (
-            <div
-              key={item.number}
-              className="grid gap-7 border-b border-[#DEDCD5] py-10 md:grid-cols-[80px_0.8fr_1.2fr] md:items-start md:gap-10 md:py-12"
-            >
-              {/* Number */}
-              <span className="text-[10px] font-semibold tracking-[0.16em] text-[#999890]">
-                {item.number}
-              </span>
-
-              {/* Title */}
-              <h4 className="font-[Sora] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
-                {item.title}
-              </h4>
-
-              {/* Description */}
-              <p className="max-w-[500px] text-sm leading-7 text-[#5F5E58] sm:text-base">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ==================================================
-          CORE IDEA
-      ================================================== */}
-      <div className="border-y border-[#DEDCD5] bg-[#111111] text-[#F7F6F2]">
-        <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#63D69E]">
-                The HydroFit principle
-              </p>
-
-              <h3 className="max-w-[850px] font-[Sora] text-4xl font-semibold leading-[0.97] tracking-[-0.05em] sm:text-5xl md:text-6xl">
-                Start with hydration.
-                <br />
-                End with movement.
-              </h3>
-            </div>
-
-            <a
-              href="#transformation"
-              className="group inline-flex w-fit items-center gap-3 border-b border-[#F7F6F2] pb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#F7F6F2] transition-colors duration-300 hover:border-[#63D69E] hover:text-[#63D69E]"
-            >
-              See the transformation
-              <ArrowUpRight
-                size={15}
-                strokeWidth={1.8}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          NEXT SECTION
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 lg:px-12 xl:px-16">
-        <a
-          href="#how-to-use"
-          className="group flex items-center justify-between border-b border-[#DEDCD5] pb-5"
-        >
-          <div>
-            <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-              Next
-            </p>
-
-            <span className="font-[Sora] text-xl font-semibold tracking-[-0.025em] sm:text-2xl">
-              How to use
-            </span>
-          </div>
-
-          <ArrowUpRight
-            size={20}
-            strokeWidth={1.5}
-            className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-          />
-        </a>
       </div>
     </section>
   );

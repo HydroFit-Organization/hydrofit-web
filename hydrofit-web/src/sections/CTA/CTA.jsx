@@ -1,194 +1,120 @@
 import React from "react";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
+
+const whatsappMessage =
+  "Hi HydroFit, I'm interested in HydroFit and would like to know more about the product.";
+
+const whatsappUrl = `https://wa.me/8106801326?text=${encodeURIComponent(
+  whatsappMessage,
+)}`;
 
 const CTA = () => {
   return (
-    <section id="order" className="overflow-hidden bg-[#111111] text-[#F7F6F2]">
-      {/* ==================================================
-          MAIN CTA
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="grid gap-16 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          {/* Left */}
-          <div>
-            <div className="mb-8 flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[#63D69E]" />
+    <section
+      id="contact"
+      className="scroll-mt-[112px] overflow-hidden bg-[#111111] text-[#F7F6F2]"
+    >
+      <SectionHeading
+        number="10"
+        label="CONTACT"
+        title={
+          <>
+            LET'S TALK
+            <br />
+            <span className="text-[#63D69E]">HYDROFIT.</span>
+          </>
+        }
+        description="Have a question, want to know more, or interested in HydroFit? Get in touch with us directly."
+        className="text-[#F7F6F2]"
+      />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A9A9A2]">
-                HydroFit · Early Access
-              </span>
-            </div>
-
-            <h2 className="max-w-[900px] font-[Sora] text-5xl font-semibold leading-[0.91] tracking-[-0.06em] sm:text-6xl md:text-7xl lg:text-[88px]">
-              Ready to
-              <br />
-              get HydroFit?
-            </h2>
-
-            <p className="mt-8 max-w-[600px] text-base leading-7 text-[#A9A9A2] sm:text-lg">
-              Start with HydroFit as your everyday water bottle. When you're
-              ready, follow the transformation process and take it into your
-              training routine.
-            </p>
+      <div className="mx-auto max-w-[1600px] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24 xl:px-16">
+        <div className="relative overflow-hidden border border-white/15">
+          {/* Background word */}
+          <div className="pointer-events-none absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap font-[Sora] text-[22vw] font-semibold leading-none tracking-[-0.09em] text-white/[0.025] sm:-bottom-10">
+            HYDROFIT
           </div>
 
-          {/* Right CTA */}
-          <div className="lg:ml-auto lg:w-full lg:max-w-[430px]">
-            <div className="border border-[#383833] bg-[#181817] p-6 sm:p-8">
-              <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center border border-[#383833]">
-                  <MessageCircle
-                    size={21}
-                    strokeWidth={1.5}
-                    className="text-[#63D69E]"
-                  />
-                </div>
+          <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr]">
+            {/* Contact message */}
+            <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-14">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#63D69E]">
+                EARLY ACCESS / CONTACT
+              </p>
 
-                <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#77766F]">
-                  Order / 01
-                </span>
-              </div>
-
-              <h3 className="mt-10 font-[Sora] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
-                Order through WhatsApp.
+              <h3 className="mt-5 max-w-[700px] font-[Sora] text-4xl font-semibold leading-[0.9] tracking-[-0.06em] sm:text-5xl md:text-6xl">
+                HAVE A
+                <br />
+                <span className="text-[#77766F]">QUESTION?</span>
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-[#A9A9A2]">
-                Message us directly to check availability, ask questions, and
-                place your HydroFit order.
-              </p>
-
-              <a
-                href="https://wa.me/YOUR_NUMBER"
-                target="_blank"
-                rel="noreferrer"
-                className="group mt-8 flex w-full items-center justify-between bg-[#F7F6F2] px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition-colors duration-300 hover:bg-[#0B8F63] hover:text-[#F7F6F2]"
-              >
-                Start on WhatsApp
-                <ArrowUpRight
-                  size={17}
-                  strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
-
-              <p className="mt-4 text-center text-[10px] leading-5 text-[#77766F]">
-                Early-access availability may vary.
+              <p className="mt-6 max-w-[480px] text-xs leading-6 text-[#999890] sm:text-sm">
+                We'd love to hear from you. Reach out to ask about HydroFit,
+                early access, or anything related to the product.
               </p>
             </div>
+
+            {/* Contact details */}
+            <div className="relative z-10 flex flex-col justify-between p-6 sm:p-10 lg:p-14">
+              <div>
+                <p className="text-[7px] uppercase tracking-[0.2em] text-[#77766F]">
+                  LOCATION
+                </p>
+
+                <p className="mt-2 font-[Sora] text-xl font-semibold tracking-[-0.04em]">
+                  Telangana, India
+                </p>
+              </div>
+
+              <div className="mt-12">
+                <p className="mb-4 text-[7px] uppercase tracking-[0.2em] text-[#77766F]">
+                  GET IN TOUCH
+                </p>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-full items-center justify-between bg-[#F7F6F2] px-5 py-5 text-[#111111] transition-all duration-300 hover:bg-[#0B8F63] hover:text-white"
+                >
+                  <span className="text-[9px] font-semibold uppercase tracking-[0.18em]">
+                    Contact on WhatsApp
+                  </span>
+
+                  <ArrowUpRight
+                    size={18}
+                    strokeWidth={1.8}
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom strip */}
+          <div className="relative z-10 flex flex-col gap-3 border-t border-white/10 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
+            <span className="text-[7px] uppercase tracking-[0.2em] text-[#77766F]">
+              HYDROFIT / TRANSFORMABLE WATER BOTTLE
+            </span>
+
+            <span className="text-[7px] uppercase tracking-[0.2em] text-[#77766F]">
+              TELANGANA, INDIA
+            </span>
           </div>
         </div>
       </div>
 
-      {/* ==================================================
-          PRODUCT STATEMENT
-      ================================================== */}
-      <div className="border-y border-[#33332F]">
-        <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 md:py-20 lg:px-12 xl:px-16">
-          <div className="grid gap-10 md:grid-cols-3">
-            <div>
-              <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                Starts as
-              </p>
+      {/* Footer */}
+      <footer className="border-t border-white/10">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-5 sm:px-8 lg:px-12 xl:px-16">
+          <span className="font-[Sora] text-[10px] font-semibold tracking-[-0.02em]">
+            HYDRO<span className="text-[#63D69E]">FIT</span>
+          </span>
 
-              <p className="mt-4 font-[Sora] text-2xl font-semibold tracking-[-0.03em]">
-                A water bottle.
-              </p>
-            </div>
-
-            <div>
-              <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                Designed around
-              </p>
-
-              <p className="mt-4 font-[Sora] text-2xl font-semibold tracking-[-0.03em]">
-                One distinctive form.
-              </p>
-            </div>
-
-            <div>
-              <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                Can become
-              </p>
-
-              <p className="mt-4 font-[Sora] text-2xl font-semibold tracking-[-0.03em]">
-                Workout equipment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          FINAL STATEMENT
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#63D69E]">
-              HydroFit
-            </p>
-          </div>
-
-          <div>
-            <h3 className="max-w-[850px] font-[Sora] text-4xl font-semibold leading-[0.96] tracking-[-0.05em] sm:text-5xl md:text-6xl">
-              One bottle.
-              <br />A different way to move.
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      {/* ==================================================
-          FOOTER
-      ================================================== */}
-      <footer className="border-t border-[#33332F]">
-        <div className="mx-auto max-w-[1600px] px-5 py-8 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
-            {/* Logo */}
-            <a
-              href="#home"
-              className="font-[Sora] text-lg font-semibold tracking-[-0.04em]"
-            >
-              HYDRO<span className="text-[#63D69E]">FIT</span>
-            </a>
-
-            {/* Links */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              <a
-                href="#product"
-                className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#77766F] transition-colors hover:text-[#F7F6F2]"
-              >
-                Product
-              </a>
-
-              <a
-                href="#transformation"
-                className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#77766F] transition-colors hover:text-[#F7F6F2]"
-              >
-                How It Works
-              </a>
-
-              <a
-                href="#faq"
-                className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#77766F] transition-colors hover:text-[#F7F6F2]"
-              >
-                FAQ
-              </a>
-
-              <a
-                href="#order"
-                className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#77766F] transition-colors hover:text-[#F7F6F2]"
-              >
-                Order
-              </a>
-            </div>
-
-            {/* Copyright */}
-            <p className="text-[10px] uppercase tracking-[0.12em] text-[#555550]">
-              © {new Date().getFullYear()} HydroFit
-            </p>
-          </div>
+          <p className="text-[7px] uppercase tracking-[0.16em] text-[#66655F]">
+            © {new Date().getFullYear()} HydroFit
+          </p>
         </div>
       </footer>
     </section>

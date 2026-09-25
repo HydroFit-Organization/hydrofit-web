@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const faqs = [
   {
@@ -22,41 +23,15 @@ const faqs = [
   },
   {
     number: "04",
-    question: "Does the concrete only go into the grip?",
-    answer:
-      "No. The transformation process is designed around filling the entire HydroFit body with concrete, according to the manufacturer's instructions.",
-  },
-  {
-    number: "05",
     question: "Can I drink from HydroFit after filling it with concrete?",
     answer:
       "No. Once HydroFit has been transformed into exercise equipment, it should no longer be treated or used as a drinking bottle.",
   },
   {
-    number: "06",
+    number: "05",
     question: "How long does the concrete need to cure?",
     answer:
       "The exact curing requirements will be provided in the final manufacturer's instructions. Do not use HydroFit for exercise until the concrete has fully cured.",
-  },
-  {
-    number: "07",
-    question:
-      "Is HydroFit ready to use as workout equipment when I receive it?",
-    answer:
-      "HydroFit begins as a water bottle. The workout-equipment transformation is a separate process that must be completed according to the manufacturer's instructions before exercise use.",
-  },
-  {
-    number: "08",
-    question:
-      "What should I check before exercising with transformed HydroFit?",
-    answer:
-      "Make sure the concrete has fully cured and inspect the transformed product before first use. Follow the manufacturer's instructions for preparation, curing, inspection, and use.",
-  },
-  {
-    number: "09",
-    question: "Can I order HydroFit now?",
-    answer:
-      "HydroFit is currently being introduced through an early-access MVP. Contact us through WhatsApp to ask about availability and place an order.",
   },
 ];
 
@@ -68,37 +43,27 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="overflow-hidden bg-[#F7F6F2] text-[#111111]">
-      {/* ==================================================
-          INTRO
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          <div>
-            <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#0B8F63]">
-              09 / FAQ
-            </p>
+    <section
+      id="faq"
+      className="scroll-mt-[112px] overflow-hidden bg-[#F7F6F2] text-[#111111]"
+    >
+      <SectionHeading
+        number="09"
+        label="FAQ"
+        title={
+          <>
+            QUESTIONS?
+            <br />
+            <span className="text-[#0B8F63]">WE HAVE ANSWERS.</span>
+          </>
+        }
+        description="Everything you need to understand HydroFit before ordering or beginning the transformation process."
+      />
 
-            <h2 className="max-w-[760px] font-[Sora] text-5xl font-semibold leading-[0.94] tracking-[-0.055em] sm:text-6xl md:text-7xl">
-              Questions?
-              <br />
-              We've got answers.
-            </h2>
-          </div>
-
-          <p className="max-w-[500px] text-lg leading-7 text-[#55544E] sm:text-xl lg:ml-auto">
-            Everything you need to understand HydroFit before ordering or
-            beginning the transformation process.
-          </p>
-        </div>
-      </div>
-
-      {/* ==================================================
-          FAQ LIST
-      ================================================== */}
+      {/* FAQ LIST */}
       <div className="border-y border-[#DEDCD5]">
         <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[0.55fr_1.45fr]">
-          {/* Sticky side */}
+          {/* Sticky Side */}
           <div className="hidden border-r border-[#DEDCD5] p-10 lg:block xl:p-14">
             <div className="sticky top-[140px]">
               <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
@@ -184,10 +149,8 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* ==================================================
-          STILL HAVE QUESTIONS
-      ================================================== */}
-      <div className="mx-auto max-w-[1600px] px-5 py-24 sm:px-8 md:py-32 lg:px-12 xl:px-16">
+      {/* Still Have Questions */}
+      <div className="mx-auto max-w-[1600px] px-5 py-20 sm:px-8 md:py-24 lg:px-12 xl:px-16">
         <div className="grid gap-10 border-t border-[#111111] pt-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
@@ -219,39 +182,6 @@ const FAQ = () => {
               className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
           </a>
-        </div>
-      </div>
-
-      {/* ==================================================
-          NEXT SECTION
-      ================================================== */}
-      <div className="border-t border-[#DEDCD5]">
-        <div className="mx-auto max-w-[1600px] px-5 py-20 sm:px-8 md:py-28 lg:px-12 xl:px-16">
-          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63]">
-                Final step
-              </p>
-
-              <h3 className="font-[Sora] text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl md:text-6xl">
-                Ready to try
-                <br />
-                HydroFit?
-              </h3>
-            </div>
-
-            <a
-              href="#order"
-              className="group inline-flex w-fit items-center gap-3 border-b border-[#111111] pb-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300 hover:border-[#0B8F63] hover:text-[#0B8F63]"
-            >
-              Order HydroFit
-              <ArrowUpRight
-                size={15}
-                strokeWidth={1.8}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </section>
