@@ -1,730 +1,252 @@
-import React, { useState } from "react";
-import { ArrowUpRight, Check } from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
-const PRODUCT_IMAGE =
-  "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png";
-
-const WHATSAPP_NUMBER = "8106801326";
-
-const pricingOptions = [
+const products = [
   {
-    id: "single",
-    title: "Single",
-    quantity: "1 BOTTLE",
-    price: 399,
-    personalized: false,
+    id: "men",
+    number: "01",
+    label: "MEN",
+    title: "HYDROFIT MEN",
+    description:
+      "A stronger, more structured expression of the HydroFit form — built for everyday hydration and an active lifestyle.",
+    image:
+      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+    specs: ["280 MM", "Ø45 MM GRIP", "100 MM MAX"],
   },
   {
-    id: "duo",
-    title: "Duo",
-    quantity: "2 BOTTLES",
-    price: 599,
-    personalized: false,
+    id: "women",
+    number: "02",
+    label: "WOMEN",
+    title: "HYDROFIT WOMEN",
+    description:
+      "A refined interpretation of the HydroFit form — designed for comfortable everyday hydration and effortless carry.",
+    image:
+      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+    specs: ["280 MM", "Ø45 MM GRIP", "100 MM MAX"],
   },
-  {
-    id: "personalized-single",
-    title: "Personalized",
-    quantity: "1 BOTTLE",
-    price: 499,
-    personalized: true,
-  },
-  {
-    id: "personalized-duo",
-    title: "Personalized Duo",
-    quantity: "2 BOTTLES",
-    price: 699,
-    personalized: true,
-    badge: "BEST VALUE",
-  },
-];
-
-const colors = [
-  {
-    name: "Graphite",
-    value: "#262626",
-  },
-  {
-    name: "Ivory",
-    value: "#E9E7DE",
-  },
-  {
-    name: "Green",
-    value: "#0B8F63",
-  },
-  {
-    name: "Stone",
-    value: "#8A8982",
-  },
-];
-
-const specifications = [
-  ["HEIGHT", "280", "MM"],
-  ["MAX DIAMETER", "100", "MM"],
-  ["CENTRAL GRIP", "45", "Ø MM"],
-  ["TOP RESERVOIR", "80", "MM"],
-  ["BOTTOM RESERVOIR", "80", "MM"],
-  ["MOUTH", "45", "Ø MM"],
 ];
 
 const Product = () => {
-  const [selectedPlan, setSelectedPlan] = useState("single");
-  const [selectedColor, setSelectedColor] = useState("Graphite");
-  const [name, setName] = useState("");
-  const [nameError, setNameError] = useState("");
-
-  const selectedProduct =
-    pricingOptions.find((item) => item.id === selectedPlan) ||
-    pricingOptions[0];
-
-  const isPersonalized = selectedProduct.personalized;
-
-  const handlePlanChange = (id) => {
-    setSelectedPlan(id);
-    setNameError("");
-
-    const selected = pricingOptions.find((item) => item.id === id);
-
-    if (!selected?.personalized) {
-      setName("");
-    }
-  };
-
-  const handleOrder = () => {
-    const trimmedName = name.trim();
-
-    if (isPersonalized && !trimmedName) {
-      setNameError("Please enter your name before placing the order.");
-      return;
-    }
-
-    setNameError("");
-
-    const message = [
-      "Hi HydroFit, I would like to place an order.",
-      "",
-      `Package: ${selectedProduct.title}`,
-      `Quantity: ${selectedProduct.quantity}`,
-      `Price: ₹${selectedProduct.price}`,
-      `Colour: ${selectedColor}`,
-      `Name: ${isPersonalized ? trimmedName : "No"}`,
-      "",
-      "Please share the order details and next steps.",
-    ].join("\n");
-
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      message,
-    )}`;
-
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
   return (
-    <section
-      id="product"
-      className="scroll-mt-[112px] overflow-hidden bg-[#F7F6F2] text-[#111111]"
-    >
-      {/* =====================================================
-          INTRO
-      ===================================================== */}
-
+    <section id="products-intro" className="bg-[#F7F6F2]">
+      {/* Section Heading */}
       <SectionHeading
         number="04"
-        label="PRODUCT DETAILS"
+        label="OUR PRODUCTS"
         title={
           <>
-            ONE OBJECT.
+            ONE FORM.
             <br />
-            <span className="text-[#0B8F63]">TWO PURPOSES.</span>
+            <span className="text-[#0B8F63]">TWO EDITIONS.</span>
           </>
         }
-        description="The HydroFit bottle is designed around a distinctive double-ended form, central grip, and two functional reservoirs."
+        description="Meet the HydroFit collection. Two distinct editions built around the same transformable bottle — designed to fit different people, preferences, and everyday routines."
       />
 
-      {/* =====================================================
-          PRODUCT OBJECT
-      ===================================================== */}
+      {/* Products */}
+      <div className="mx-auto max-w-[1600px] px-5 pb-24 sm:px-8 sm:pb-28 lg:px-12 xl:px-16">
+        <div className="space-y-6">
+          {products.map((product, index) => {
+            const isReversed = index % 2 === 1;
 
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16">
-        <div className="relative overflow-hidden bg-[#E9E7DE]">
-          {/* Background typography */}
+            return (
+              <article
+                key={product.id}
+                className="group overflow-hidden border border-[#DEDCD5] bg-[#E9E7DE]"
+              >
+                <div
+                  className={`grid min-h-[560px] lg:min-h-[620px] ${
+                    isReversed
+                      ? "lg:grid-cols-[60%_40%]"
+                      : "lg:grid-cols-[40%_60%]"
+                  }`}
+                >
+                  {/* =========================
+                      PRODUCT CONTENT
+                  ========================= */}
+                  <div
+                    className={`relative flex min-h-[420px] flex-col justify-between p-7 sm:p-10 lg:min-h-0 lg:p-12 xl:p-14 ${
+                      isReversed ? "lg:order-2" : "lg:order-1"
+                    }`}
+                  >
+                    {/* Large Background Number */}
+                    <span className="pointer-events-none absolute -bottom-8 -left-3 font-[Sora] text-[170px] font-semibold leading-none tracking-[-0.1em] text-black/[0.035] sm:text-[210px] lg:text-[230px]">
+                      {product.number}
+                    </span>
 
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              left-1/2
-              top-1/2
-              -translate-x-1/2
-              -translate-y-1/2
-              whitespace-nowrap
-              font-[Sora]
-              text-[20vw]
-              font-semibold
-              leading-none
-              tracking-[-0.09em]
-              text-black/[0.035]
-            "
-          >
-            HYDROFIT
-          </div>
+                    <div className="relative z-10">
+                      {/* Product Label */}
+                      <div className="flex items-center gap-3">
+                        <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
 
-          {/* Top information */}
-
-          <div className="absolute left-6 right-6 top-6 z-20 flex items-center justify-between sm:left-8 sm:right-8 sm:top-8">
-            <div className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
-
-              <span className="text-[8px] font-semibold uppercase tracking-[0.24em] text-[#77766F]">
-                THE ORIGINAL HYDROFIT
-              </span>
-            </div>
-
-            <span className="text-[8px] uppercase tracking-[0.2em] text-[#999890]">
-              280 MM
-            </span>
-          </div>
-
-          {/* Left information */}
-
-          <div className="absolute left-6 top-1/2 z-20 hidden -translate-y-1/2 lg:block">
-            <div className="flex items-start gap-4">
-              <span className="mt-1 h-px w-12 bg-[#0B8F63]" />
-
-              <div>
-                <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#77766F]">
-                  CENTRAL GRIP
-                </p>
-
-                <p className="mt-1 font-[Sora] text-2xl font-semibold tracking-[-0.06em]">
-                  Ø45
-                  <span className="ml-1 text-xs text-[#0B8F63]">MM</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right information */}
-
-          <div className="absolute right-6 top-1/2 z-20 hidden -translate-y-1/2 text-right lg:block">
-            <div className="flex items-start gap-4">
-              <div>
-                <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#77766F]">
-                  MAX DIAMETER
-                </p>
-
-                <p className="mt-1 font-[Sora] text-2xl font-semibold tracking-[-0.06em]">
-                  100
-                  <span className="ml-1 text-xs text-[#0B8F63]">MM</span>
-                </p>
-              </div>
-
-              <span className="mt-1 h-px w-12 bg-[#0B8F63]" />
-            </div>
-          </div>
-
-          {/* Bottle stage */}
-
-          <div className="relative flex min-h-[560px] items-center justify-center sm:min-h-[680px] lg:min-h-[760px]">
-            {/* <div className="absolute bottom-[19%] left-1/2 h-8 w-[38%] -translate-x-1/2 rounded-full bg-black/[0.12] blur-2xl" /> */}
-
-            <img
-              src={PRODUCT_IMAGE}
-              alt="HydroFit bottle"
-              className="
-                relative
-                z-10
-                h-[43%]
-                w-auto
-                rotate-90
-                object-contain
-                drop-shadow-[0_30px_28px_rgba(0,0,0,0.18)]
-                transition-transform
-                duration-700
-                hover:scale-[1.025]
-                left-3
-                sm:left-0
-              "
-            />
-          </div>
-
-          {/* Bottom information */}
-
-          <div className="relative z-20 flex flex-col border-t border-black/[0.08] bg-[#E9E7DE]/90 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex border-b border-black/[0.08] px-6 py-5 sm:border-b-0 sm:border-r sm:px-8">
-              <div>
-                <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                  FORM
-                </p>
-
-                <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em]">
-                  DOUBLE-ENDED
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-1 items-center justify-between px-6 py-5 sm:px-8">
-              <div>
-                <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                  RESERVOIRS
-                </p>
-
-                <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em]">
-                  80 MM + 80 MM
-                </p>
-              </div>
-
-              <div className="text-right">
-                <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
-                  MATERIAL
-                </p>
-
-                <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em]">
-                  BPA-FREE
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* =====================================================
-          PRODUCT CONFIGURATION
-      ===================================================== */}
-
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12 p-16 xl:px-16">
-        <div className="border-t border-[#111111]">
-          {/* =================================================
-              TOP INTRO
-          ================================================= */}
-
-          <div className="grid gap-8 border-b border-[#DEDCD5] py-10 lg:grid-cols-[0.9fr_1.1fr] lg:py-14">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
-
-                <span className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#77766F]">
-                  CONFIGURE YOUR HYDROFIT
-                </span>
-              </div>
-
-              <h3 className="mt-5 max-w-[600px] font-[Sora] text-4xl font-semibold leading-[0.92] tracking-[-0.065em] sm:text-5xl lg:text-6xl">
-                Make it
-                <br />
-                <span className="text-[#0B8F63]">yours.</span>
-              </h3>
-            </div>
-
-            <div className="flex items-end lg:justify-end">
-              <p className="max-w-[420px] text-sm leading-7 text-[#66655F]">
-                Choose your HydroFit edition, finish, and personalization. Your
-                selected configuration is included when you place your order.
-              </p>
-            </div>
-          </div>
-
-          {/* =================================================
-              CONFIGURATION AREA
-          ================================================= */}
-
-          <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-            {/* =================================================
-                LEFT — EDITION
-            ================================================= */}
-
-            <div className="border-b border-[#DEDCD5] lg:border-b-0 lg:border-r lg:pr-12">
-              <div className="flex items-end justify-between py-7">
-                <div>
-                  <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#0B8F63]">
-                    01 / EDITION
-                  </p>
-
-                  <p className="mt-1 text-xs text-[#77766F]">
-                    Select your HydroFit
-                  </p>
-                </div>
-
-                <div className="text-right">
-                  <p className="text-[7px] uppercase tracking-[0.18em] text-[#999890]">
-                    SELECTED
-                  </p>
-
-                  <p className="mt-1 font-[Sora] text-xl font-semibold tracking-[-0.05em]">
-                    ₹{selectedProduct.price}
-                  </p>
-                </div>
-              </div>
-
-              {/* Edition options */}
-
-              <div className="grid gap-px bg-[#DEDCD5] sm:grid-cols-2">
-                {pricingOptions.map((option) => {
-                  const active = selectedPlan === option.id;
-
-                  return (
-                    <button
-                      key={option.id}
-                      type="button"
-                      onClick={() => handlePlanChange(option.id)}
-                      className={`
-                        relative
-                        min-h-[150px]
-                        overflow-hidden
-                        p-5
-                        text-left
-                        transition-all
-                        duration-300
-                        sm:p-6
-                        ${
-                          active
-                            ? "bg-[#111111] text-[#F7F6F2]"
-                            : "bg-[#F7F6F2] hover:bg-[#EEEDE7]"
-                        }
-                      `}
-                    >
-                      {/* TOP CONTENT */}
-
-                      <div className="flex items-start justify-between gap-4 pr-1">
-                        <div>
-                          <span
-                            className={`
-                              block
-                              text-[8px]
-                              font-semibold
-                              uppercase
-                              tracking-[0.18em]
-                              ${active ? "text-[#63D69E]" : "text-[#77766F]"}
-                            `}
-                          >
-                            {option.quantity}
-                          </span>
-
-                          <h4 className="mt-2 font-[Sora] text-lg font-semibold tracking-[-0.045em]">
-                            {option.title}
-                          </h4>
-                        </div>
-
-                        {/* Selection indicator */}
-
-                        <span
-                          className={`
-                            flex
-                            h-5
-                            w-5
-                            shrink-0
-                            items-center
-                            justify-center
-                            rounded-full
-                            border
-                            ${active ? "border-[#63D69E]" : "border-[#C9C7BF]"}
-                          `}
-                        >
-                          {active && (
-                            <span className="h-2 w-2 rounded-full bg-[#63D69E]" />
-                          )}
+                        <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#77766F]">
+                          {product.number} / {product.label}
                         </span>
                       </div>
 
-                      {/* BOTTOM LEFT LABEL */}
-
-                      <span
-                        className={`
-                          absolute
-                          bottom-6
-                          left-5
-                          max-w-[50%]
-                          text-[7px]
-                          uppercase
-                          tracking-[0.16em]
-                          sm:left-6
-                          ${active ? "text-white/40" : "text-[#AAA8A0]"}
-                        `}
-                      >
-                        {option.personalized
-                          ? "ADD YOUR NAME"
-                          : "READY TO ORDER"}
-                      </span>
-
-                      {/* PRICE — FIXED BOTTOM RIGHT */}
-
-                      <span
+                      {/* Product Title */}
+                      <h3
                         className="
-                          absolute
-                          bottom-5
-                          right-5
-                          whitespace-nowrap
+                          mt-10
                           font-[Sora]
-                          text-xl
+                          text-[38px]
                           font-semibold
-                          tracking-[-0.05em]
-                          sm:bottom-6
-                          sm:right-6
+                          leading-[0.94]
+                          tracking-[-0.065em]
+                          sm:text-[50px]
+                          md:text-[56px]
+                          lg:text-[46px]
+                          xl:text-[58px]
+                          2xl:text-[64px]
                         "
                       >
-                        ₹{option.price}
+                        {product.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="mt-6 max-w-[400px] text-sm leading-7 text-[#5F5E58] sm:text-[15px]">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    {/* Bottom Content */}
+                    <div className="relative z-10 mt-12 lg:mt-10">
+                      {/* Specifications */}
+                      <div className="grid max-w-[430px] grid-cols-3 border-y border-[#D4D2CA]">
+                        {product.specs.map((spec) => (
+                          <div
+                            key={spec}
+                            className="border-r border-[#D4D2CA] px-2.5 py-4 last:border-r-0 sm:px-3"
+                          >
+                            <span className="block whitespace-nowrap text-[7px] font-semibold uppercase tracking-[0.12em] text-[#77766F] sm:text-[8px] sm:tracking-[0.16em]">
+                              {spec}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Discover */}
+                      <Link
+                        to="/products"
+                        className="mt-7 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#111111]"
+                      >
+                        Discover {product.label}
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+                          ↗
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* =========================
+                      PRODUCT IMAGE
+                  ========================= */}
+                  <div
+                    className={`relative min-h-[520px] overflow-hidden border-t border-[#D4D2CA] lg:min-h-0 lg:border-t-0 ${
+                      isReversed
+                        ? "lg:order-1 lg:border-r"
+                        : "lg:order-2 lg:border-l"
+                    }`}
+                  >
+                    {/* Top Technical Label */}
+                    <div className="absolute left-6 top-6 z-20 sm:left-7 sm:top-7">
+                      <span className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
+                        THE HYDROFIT
+                      </span>
+                    </div>
+
+                    {/* Measurement */}
+                    <div className="absolute right-6 top-6 z-20 sm:right-7 sm:top-7">
+                      <span className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
+                        280 MM
+                      </span>
+                    </div>
+
+                    {/* Background Typography */}
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute
+                        left-1/2
+                        top-1/2
+                        -translate-x-1/2
+                        -translate-y-1/2
+                        whitespace-nowrap
+                        font-[Sora]
+                        text-[80px]
+                        font-semibold
+                        tracking-[-0.1em]
+                        text-black/[0.035]
+                        sm:text-[120px]
+                        lg:text-[110px]
+                        xl:text-[150px]
+                      "
+                    >
+                      HYDROFIT
+                    </span>
+
+                    {/* Same Image Container For Both */}
+                    <div className="relative flex h-full min-h-[520px] items-center justify-center px-8 py-16 sm:px-12 lg:min-h-0 lg:px-14 lg:py-20 xl:px-20">
+                      <div className="relative flex h-[390px] w-full items-center justify-center sm:h-[430px] lg:h-[440px] xl:h-[470px]">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="
+                            relative
+                            z-10
+                            h-full
+                            w-full
+                            object-contain
+                            transition-transform
+                            duration-700
+                            ease-out
+                            group-hover:scale-[1.025]
+                          "
+                        />
+                      </div>
+                    </div>
+
+                    {/* Bottom Technical Information */}
+                    <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-[#D4D2CA] px-6 py-4 sm:px-7">
+                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#77766F] sm:text-[8px] sm:tracking-[0.18em]">
+                        TRANSFORMABLE WATER BOTTLE
                       </span>
 
-                      {/* BADGE */}
-
-                      {option.badge && (
-                        <span
-                          className={`
-                            absolute
-                            right-5
-                            top-5
-                            max-w-[70px]
-                            text-right
-                            text-[6px]
-                            font-semibold
-                            uppercase
-                            tracking-[0.14em]
-                            sm:right-6
-                            sm:top-6
-                            ${active ? "text-[#63D69E]" : "text-[#0B8F63]"}
-                          `}
-                        >
-                          {option.badge}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* =================================================
-                RIGHT — CUSTOMIZATION
-            ================================================= */}
-
-            <div className="lg:pl-12">
-              {/* Finish */}
-
-              <div className="border-b border-[#DEDCD5] py-7">
-                <div className="flex items-center justify-between gap-6">
-                  <div>
-                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#0B8F63]">
-                      02 / FINISH
-                    </p>
-
-                    <p className="mt-1 text-xs text-[#77766F]">
-                      {selectedColor}
-                    </p>
-                  </div>
-
-                  <div className="flex shrink-0 gap-4">
-                    {colors.map((color) => {
-                      const active = selectedColor === color.name;
-
-                      return (
-                        <button
-                          key={color.name}
-                          type="button"
-                          onClick={() => setSelectedColor(color.name)}
-                          aria-label={`Select ${color.name}`}
-                          aria-pressed={active}
-                          className={`
-                            relative
-                            h-10
-                            w-10
-                            shrink-0
-                            rounded-full
-                            border
-                            transition-transform
-                            duration-200
-                            ${
-                              active
-                                ? "scale-110 border-[#111111]"
-                                : "border-[#D5D3CC] hover:scale-105"
-                            }
-                          `}
-                        >
-                          <span
-                            className="absolute inset-[4px] rounded-full"
-                            style={{
-                              backgroundColor: color.value,
-                            }}
-                          />
-
-                          {active && (
-                            <span className="absolute -inset-1 rounded-full border border-[#111111]/30" />
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              {/* Personalization */}
-
-              {isPersonalized ? (
-                <div className="border-b border-[#DEDCD5] py-7">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#0B8F63]">
-                        03 / PERSONALIZATION
-                      </p>
-
-                      <p className="mt-1 text-xs text-[#77766F]">
-                        Add your name
-                      </p>
-                    </div>
-
-                    <span className="text-[8px] text-[#999890]">
-                      {name.length}/16
-                    </span>
-                  </div>
-
-                  <div className="relative mt-6">
-                    <input
-                      type="text"
-                      value={name}
-                      maxLength={16}
-                      onChange={(e) => {
-                        setName(e.target.value.slice(0, 16));
-
-                        if (nameError) {
-                          setNameError("");
-                        }
-                      }}
-                      placeholder="YOUR NAME"
-                      className={`
-                        w-full
-                        border-b
-                        bg-transparent
-                        px-0
-                        py-3
-                        font-[Sora]
-                        text-base
-                        uppercase
-                        tracking-[0.08em]
-                        outline-none
-                        placeholder:text-[#B0AEA7]
-                        ${
-                          nameError
-                            ? "border-red-500 focus:border-red-500"
-                            : "border-[#AAA8A0] focus:border-[#0B8F63]"
-                        }
-                      `}
-                    />
-
-                    {nameError && (
-                      <p className="mt-2 text-[9px] font-medium text-red-500">
-                        {nameError}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <div className="border-b border-[#DEDCD5] py-7">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-7 w-7 items-center justify-center border border-[#DEDCD5]">
-                      <Check
-                        size={12}
-                        strokeWidth={1.5}
-                        className="text-[#0B8F63]"
-                      />
-                    </span>
-
-                    <div>
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#0B8F63]">
-                        03 / PERSONALIZATION
-                      </p>
-
-                      <p className="mt-1 text-xs text-[#77766F]">
-                        Not included in this edition
-                      </p>
+                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#0B8F63] sm:text-[8px] sm:tracking-[0.18em]">
+                        HYDROFIT
+                      </span>
                     </div>
                   </div>
                 </div>
-              )}
+              </article>
+            );
+          })}
+        </div>
 
-              {/* Order summary */}
+        {/* =========================
+            COLLECTION FOOTER
+        ========================= */}
+        <div className="mt-10 flex flex-col gap-6 border-t border-[#111111] pt-7 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#77766F]">
+              THE COLLECTION
+            </span>
 
-              <div className="py-7">
-                <div className="flex items-end justify-between gap-6">
-                  <div>
-                    <p className="text-[8px] uppercase tracking-[0.18em] text-[#999890]">
-                      YOUR HYDROFIT
-                    </p>
-
-                    <h4 className="mt-1 font-[Sora] text-2xl font-semibold tracking-[-0.05em]">
-                      {selectedProduct.title}
-                    </h4>
-
-                    <p className="mt-1 text-[8px] uppercase tracking-[0.15em] text-[#999890]">
-                      {selectedProduct.quantity} · {selectedColor}
-                    </p>
-                  </div>
-
-                  <div className="shrink-0 text-right">
-                    <p className="font-[Sora] text-3xl font-semibold tracking-[-0.06em]">
-                      ₹{selectedProduct.price}
-                    </p>
-                  </div>
-                </div>
-
-                {/* CTA */}
-
-                <button
-                  type="button"
-                  onClick={handleOrder}
-                  className="
-                    group
-                    mt-7
-                    flex
-                    min-h-[64px]
-                    w-full
-                    items-center
-                    justify-between
-                    bg-[#111111]
-                    px-6
-                    text-left
-                    text-[#F7F6F2]
-                    transition-all
-                    duration-300
-                    hover:bg-[#0B8F63]
-                  "
-                >
-                  <div>
-                    <span className="block text-[9px] font-semibold uppercase tracking-[0.2em]">
-                      Order on WhatsApp
-                    </span>
-
-                    <span className="mt-1 block text-[8px] text-white/40">
-                      Your selected configuration
-                    </span>
-                  </div>
-
-                  <span className="flex h-9 w-9 items-center justify-center border border-white/20">
-                    <ArrowUpRight
-                      size={16}
-                      strokeWidth={1.5}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover:-translate-y-1
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </span>
-                </button>
-
-                <div className="mt-3 flex items-center gap-2">
-                  <Check
-                    size={11}
-                    strokeWidth={1.5}
-                    className="text-[#0B8F63]"
-                  />
-
-                  <span className="text-[8px] text-[#888780]">
-                    Configuration included with your order.
-                  </span>
-                </div>
-              </div>
-            </div>
+            <p className="mt-3 max-w-[500px] font-[Sora] text-xl font-medium leading-tight tracking-[-0.035em] sm:text-2xl">
+              One bottle. Two editions.
+              <br />
+              <span className="text-[#0B8F63]">One second purpose.</span>
+            </p>
           </div>
+
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-4 self-start border border-[#111111] px-6 py-4 text-[10px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-[#111111] hover:text-white sm:self-auto"
+          >
+            Explore Products
+            <span>↗</span>
+          </Link>
         </div>
       </div>
     </section>
