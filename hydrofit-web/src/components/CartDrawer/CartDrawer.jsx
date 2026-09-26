@@ -85,6 +85,12 @@ const CartDrawer = ({ isOpen, onClose }) => {
       `https://wa.me/${WHATSAPP_NUMBER}?text=` + encodeURIComponent(message);
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Clear basket after placing the order
+    clearCart();
+
+    // Close drawer
+    onClose();
   };
 
   return (
