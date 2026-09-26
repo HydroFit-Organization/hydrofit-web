@@ -1,32 +1,31 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar/Navbar";
-import Concept from "./sections/Concept/Concept";
-import CTA from "./sections/CTA/CTA";
-import FAQ from "./sections/FAQ/FAQ";
-import Hero from "./sections/Hero/Hero";
-import HowToUse from "./sections/HowToUse/HowToUse";
-import Product from "./sections/Product/Product";
-import Reviews from "./sections/Reviews/Reviews";
-import Safety from "./sections/Safety/Safety";
-import Transformation from "./sections/Transformation/Transformation";
-import WhyHydroFit from "./sections/WhyHydroFit/WhyHydroFit";
+import Footer from "./components/Footer/Foooter";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Concept />
-        <Transformation />
-        <Product />
-        <WhyHydroFit />
-        <HowToUse />
-        <Safety />
-        <Reviews />
-        <FAQ />
-        <CTA />
-      </main>
-    </>
+    <BrowserRouter>
+      <CartProvider>
+        <ScrollToTop />
+
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/products" element={<Products />} />
+
+          <Route path="/products/:productId" element={<ProductDetails />} />
+        </Routes>
+        <Footer />
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

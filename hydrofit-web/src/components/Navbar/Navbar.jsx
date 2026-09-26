@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, ShoppingCart, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import CartDrawer from "../CartDrawer/CartDrawer";
 
 const navItems = [
   {
@@ -7,8 +10,8 @@ const navItems = [
     href: "#transformation",
   },
   {
-    label: "Product",
-    href: "#product",
+    label: "Products",
+    href: "/products",
   },
   {
     label: "FAQ",
@@ -20,15 +23,10 @@ const navItems = [
   },
 ];
 
-const whatsappMessage =
-  "Hi HydroFit, I'm interested in HydroFit and would like to know more about the product.";
-
-const whatsappUrl = `https://wa.me/8106801326?text=${encodeURIComponent(
-  whatsappMessage,
-)}`;
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { cartCount } = useCart();
 
   /* -----------------------------------------------------------
      Close mobile menu with ESC
@@ -120,13 +118,13 @@ const Navbar = () => {
               Returns to normal flex positioning so it stays
               at the far left.
           ================================================= */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             aria-label="HydroFit home"
             className="font-[Sora] text-[21px] font-bold tracking-[-0.075em] text-[#111111] lg:absolute lg:left-1/2 lg:-translate-x-1/2"
           >
             HYDRO<span className="text-[#0B8F63]">FIT</span>
-          </a>
+          </Link>
 
           {/* =================================================
               DESKTOP RIGHT NAVIGATION
@@ -144,20 +142,25 @@ const Navbar = () => {
               </a>
             ))}
 
-            {/* Order Button */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center gap-2 border border-[#111111] bg-[#111111] px-5 py-3 text-[9px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:border-[#0B8F63] hover:bg-[#0B8F63]"
+            {/* Cart */}
+            <button
+              type="button"
+              onClick={() => setIsCartOpen(true)}
+              aria-label={`Open basket with ${cartCount} items`}
+              className="group relative flex h-10 w-10 items-center justify-center border border-[#D8D7D0] text-[#111111] transition-colors duration-300 hover:border-[#0B8F63] hover:text-[#0B8F63]"
             >
-              Order
-              <ArrowUpRight
-                size={12}
-                strokeWidth={1.7}
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              <ShoppingCart
+                size={17}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:scale-105"
               />
-            </a>
+
+              {cartCount > 0 && (
+                <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center bg-[#0B8F63] px-1 text-[8px] font-semibold leading-none text-white">
+                  {cartCount}
+                </span>
+              )}
+            </button>
           </div>
 
           {/* =================================================
@@ -210,13 +213,13 @@ const Navbar = () => {
         ================================================= */}
         <div className="flex h-[82px] items-center justify-between border-b border-[#DEDCD5] px-6 sm:px-8">
           {/* Drawer Logo */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             onClick={closeMenu}
             className="font-[Sora] text-[20px] font-bold tracking-[-0.07em] text-[#111111]"
           >
             HYDRO<span className="text-[#0B8F63]">FIT</span>
-          </a>
+          </Link>
 
           {/* Close */}
           <button
@@ -267,29 +270,29 @@ const Navbar = () => {
         ================================================= */}
         <div className="border-t border-[#DEDCD5] p-6 sm:p-8">
           <p className="mb-4 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#999890]">
-            Ready to transform?
+            Your basket
           </p>
 
-          <a
-            href="https://wa.me/YOUR_NUMBER"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="/cart"
             onClick={closeMenu}
             className="group flex h-[52px] items-center justify-center gap-2 bg-[#111111] text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"
           >
-            Order HydroFit
-            <ArrowUpRight
+            View Basket
+            <ShoppingCart
               size={14}
               strokeWidth={1.7}
-              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              className="transition-transform duration-300 group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           <p className="mt-5 text-[10px] leading-5 text-[#898983]">
-            Hydration today. Transformation when you're ready.
+            Choose your HydroFit. Add it to your basket.
           </p>
         </div>
       </aside>
+
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );
 };
