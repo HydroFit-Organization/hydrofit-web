@@ -4,7 +4,7 @@ import SectionHeading from "../../components/SectionHeading/SectionHeading";
 const whatsappMessage =
   "Hi HydroFit, I'm interested in HydroFit and would like to know more about the product.";
 
-const whatsappUrl = `https://wa.me/8106801326?text=${encodeURIComponent(
+const whatsappUrl = `https://wa.me/918106801326?text=${encodeURIComponent(
   whatsappMessage,
 )}`;
 

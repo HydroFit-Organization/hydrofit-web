@@ -148,7 +148,7 @@ const Reviews = () => {
           </div>
 
           <a
-            href="https://wa.me/8106801326"
+            href="https://wa.me/918106801326"
             target="_blank"
             rel="noreferrer"
             className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#111111] px-6 py-4 text-[9px] font-semibold uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"

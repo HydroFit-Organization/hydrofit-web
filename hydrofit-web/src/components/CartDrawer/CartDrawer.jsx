@@ -3,7 +3,7 @@ import { Minus, Plus, Trash2, X, ArrowUpRight } from "lucide-react";
 
 import { useCart } from "../../context/CartContext";
 
-const WHATSAPP_NUMBER = "8106801326";
+const WHATSAPP_NUMBER = "918106801326";
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const { cartItems, cartTotal, updateQuantity, removeFromCart, clearCart } =
