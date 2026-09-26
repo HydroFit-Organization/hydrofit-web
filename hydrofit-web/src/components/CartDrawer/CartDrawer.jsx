@@ -2,12 +2,19 @@ import React from "react";
 import { Minus, Plus, Trash2, X, ArrowUpRight } from "lucide-react";
 
 import { useCart } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const WHATSAPP_NUMBER = "918106801326";
 
 const CartDrawer = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const { cartItems, cartTotal, updateQuantity, removeFromCart, clearCart } =
     useCart();
+
+  const handleContinueShopping = () => {
+    onClose();
+    navigate("/products");
+  };
 
   /* =====================================================
      GET PRODUCT IMAGE
@@ -160,7 +167,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleContinueShopping}
                 className="mt-7 bg-[#111111] px-6 py-3 text-[9px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"
               >
                 Continue Shopping
