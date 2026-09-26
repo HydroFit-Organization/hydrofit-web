@@ -273,10 +273,13 @@ const Navbar = () => {
             Your basket
           </p>
 
-          <Link
-            to="/cart"
-            onClick={closeMenu}
-            className="group flex h-[52px] items-center justify-center gap-2 bg-[#111111] text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"
+          <button
+            type="button"
+            onClick={() => {
+              closeMenu();
+              setIsCartOpen(true);
+            }}
+            className="group flex h-[52px] w-full items-center justify-center gap-2 bg-[#111111] text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#0B8F63]"
           >
             View Basket
             <ShoppingCart
@@ -284,8 +287,7 @@ const Navbar = () => {
               strokeWidth={1.7}
               className="transition-transform duration-300 group-hover:scale-105"
             />
-          </Link>
-
+          </button>
           <p className="mt-5 text-[10px] leading-5 text-[#898983]">
             Choose your HydroFit. Add it to your basket.
           </p>
