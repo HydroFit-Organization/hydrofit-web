@@ -53,7 +53,7 @@ const Hero = () => {
           <h1 className="mx-auto mt-5 max-w-[1050px] font-[Sora] text-[48px] font-semibold leading-[0.9] tracking-[-0.065em] sm:text-[64px] md:text-[76px] lg:text-[88px] xl:text-[100px]">
             ONE BOTTLE.
             <br className="sm:hidden" />{" "}
-            <span className="text-[#0B8F63]">TWO PURPOSES.</span>
+            <span className="text-[#0B8F63] ">TWO PURPOSES.</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-[570px] text-sm leading-6 text-[#5F5E58] sm:text-base sm:leading-7">

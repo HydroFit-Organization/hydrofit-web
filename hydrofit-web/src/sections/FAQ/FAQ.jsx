@@ -54,7 +54,7 @@ const FAQ = () => {
           <>
             QUESTIONS?
             <br />
-            <span className="text-[#0B8F63]">WE HAVE ANSWERS.</span>
+            <span className="text-[#0B8F63] ">WE HAVE ANSWERS.</span>
           </>
         }
         description="Everything you need to understand HydroFit before ordering or beginning the transformation process."

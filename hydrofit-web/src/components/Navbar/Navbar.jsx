@@ -123,7 +123,7 @@ const Navbar = () => {
             aria-label="HydroFit home"
             className="font-[Sora] text-[21px] font-bold tracking-[-0.075em] text-[#111111] lg:absolute lg:left-1/2 lg:-translate-x-1/2"
           >
-            HYDRO<span className="text-[#0B8F63]">FIT</span>
+            HYDRO<span className="text-[#0B8F63] ">FIT</span>{" "}
           </Link>
 
           {/* =================================================

@@ -36,7 +36,7 @@ const Reviews = () => {
   return (
     <section
       id="reviews"
-      className="scroll-mt-[112px] overflow-hidden bg-[#F7F6F2] text-[#111111]"
+      className="scroll-mt-[112px] overflow-hidden bg-white text-[#111111]"
     >
       <SectionHeading
         number="08"
@@ -45,7 +45,7 @@ const Reviews = () => {
           <>
             HEAR IT
             <br />
-            <span className="text-[#0B8F63]">FIRSTHAND.</span>
+            <span className="text-[#0B8F63] ">FIRSTHAND.</span>
           </>
         }
         description="HydroFit is being shaped with feedback from early users. These first impressions help us refine the product before wider release."

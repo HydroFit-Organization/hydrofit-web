@@ -1,5 +1,5 @@
+import SEO from "../components/SEO/SEO";
 import Concept from "../sections/Concept/Concept";
-import CTA from "../sections/CTA/CTA";
 import FAQ from "../sections/FAQ/FAQ";
 import Hero from "../sections/Hero/Hero";
 import HowToUse from "../sections/HowToUse/HowToUse";
@@ -12,6 +12,12 @@ import WhyHydroFit from "../sections/WhyHydroFit/WhyHydroFit";
 function Home() {
   return (
     <main>
+      <SEO
+        title="HydroFit | The Water Bottle That Transforms Into Workout Equipment"
+        description="Meet HydroFit — a double-ended fitness water bottle designed for everyday hydration and transformation into workout equipment. Hydrate. Transform. Train."
+        canonical="https://www.hydrofit.org.in/"
+      />
+
       <Hero />
       <Concept />
       <Transformation />

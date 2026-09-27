@@ -21,7 +21,7 @@ const Footer = () => {
           <>
             LET'S TALK
             <br />
-            <span className="text-[#63D69E]">HYDROFIT.</span>
+            <span className="text-[#0B8F63] ">HYDROFIT.</span>
           </>
         }
         description="Have a question, want to know more, or interested in HydroFit? Get in touch with us directly."
@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr]">
             {/* Contact message */}
             <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-14">
-              <p className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#63D69E]">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#0B8F63] ">
                 EARLY ACCESS / CONTACT
               </p>
 
@@ -108,7 +108,7 @@ const Footer = () => {
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-5 sm:px-8 lg:px-12 xl:px-16">
           <span className="font-[Sora] text-[10px] font-semibold tracking-[-0.02em]">
-            HYDRO<span className="text-[#63D69E]">FIT</span>
+            HYDRO<span className="text-[#0B8F63] ">FIT</span>
           </span>
 
           <p className="text-[7px] uppercase tracking-[0.16em] text-[#66655F]">

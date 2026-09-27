@@ -18,7 +18,7 @@ const Concept = () => {
           <>
             WHAT IF A BOTTLE
             <br />
-            <span className="text-[#0B8F63]">DIDN'T END</span>
+            <span className="text-[#0B8F63] ">DIDN'T END</span>
             <br />
             AS A BOTTLE?
           </>
@@ -149,7 +149,7 @@ const Concept = () => {
             <h3 className="mt-6 max-w-[650px] font-[Sora] text-[42px] font-semibold leading-[0.94] tracking-[-0.055em] sm:text-[58px] lg:text-[70px]">
               SAME FORM.
               <br />
-              <span className="text-[#0B8F63]">DIFFERENT PURPOSE.</span>
+              <span className="text-[#0B8F63] ">DIFFERENT PURPOSE.</span>
             </h3>
           </div>
 

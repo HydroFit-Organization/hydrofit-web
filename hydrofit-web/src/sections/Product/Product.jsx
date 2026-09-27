@@ -207,7 +207,7 @@ const Product = () => {
                     />
 
                     {/* Bottom Info */}
-                    {/* <div className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-between border-t border-[#D4D2CA] bg-[#E9E7DE]/90 px-6 py-4 sm:px-7">
+                    <div className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-between border-t border-[#D4D2CA] bg-[#E9E7DE]/90 px-6 py-4 sm:px-7">
                       <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#77766F] sm:text-[8px]">
                         TRANSFORMABLE WATER BOTTLE
                       </span>
@@ -215,7 +215,7 @@ const Product = () => {
                       <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#0B8F63] sm:text-[8px]">
                         HYDROFIT
                       </span>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               </article>

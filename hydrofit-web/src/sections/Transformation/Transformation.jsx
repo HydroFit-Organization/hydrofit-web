@@ -52,7 +52,7 @@ const Transformation = () => {
           <>
             ONE FORM.
             <br />
-            <span className="text-[#0B8F63]">TWO PURPOSES.</span>
+            <span className="text-[#0B8F63] ">TWO PURPOSES.</span>
           </>
         }
         description="HydroFit is designed to move through two distinct stages — everyday hydration first, training equipment later."

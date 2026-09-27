@@ -37,7 +37,7 @@ const WhyHydroFit = () => {
           <>
             DESIGNED TO
             <br />
-            <span className="text-[#0B8F63]">DO MORE.</span>
+            <span className="text-[#0B8F63] ">DO MORE.</span>
           </>
         }
         description="HydroFit is built around a simple idea: make one well-designed object useful across different stages of your day."

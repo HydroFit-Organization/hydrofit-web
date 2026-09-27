@@ -1,6 +1,6 @@
 const products = [
   {
-    id: "hydrofit-bottle",
+    id: "dumbbell-water-bottle",
     name: "Dumbbell Water Bottle",
     type: "Bottle",
     description:
@@ -20,7 +20,7 @@ const products = [
   },
 
   {
-    id: "hydrofit-personalized",
+    id: "personalized-dumbbell-bottle",
     name: "Personalized Dumbbell Bottle",
     type: "Personalized",
     description: "Make your HydroFit yours with your name added to the bottle.",
@@ -39,7 +39,7 @@ const products = [
   },
 
   {
-    id: "hydrofit-bottle-bag",
+    id: "dumbbell-bottle-bag",
     name: "Dumbbell Bottle + Bag",
     type: "Bottle + Bag",
     description:

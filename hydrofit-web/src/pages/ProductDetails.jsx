@@ -9,6 +9,8 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import products from "../data/products";
+import SEO from "../components/SEO/SEO";
+import ProductSchema from "../components/Common/ProductSchema";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -110,6 +112,16 @@ const ProductDetails = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#F7F6F2] text-[#111111] mt-[50px]">
+      <SEO
+        title={`HydroFit ${product.name} | Hydrate. Transform. Train.`}
+        description={`${product.description} Discover HydroFit's ${product.name}, designed for hydration and an active lifestyle.`}
+        canonical={`https://www.hydrofit.org.in/products/${product.id}`}
+        image={product.images?.Men}
+        type="product"
+      />
+
+      <ProductSchema product={product} />
+
       {/* =====================================================
           BACK
       ===================================================== */}

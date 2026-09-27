@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import SectionHeading from "../components/SectionHeading/SectionHeading";
 import products from "../data/products";
+import ProductSchema from "../components/Common/ProductSchema";
+import SEO from "../components/SEO/SEO";
 
 const Products = () => {
   const { cartItems, addToCart, updateQuantity } = useCart();
@@ -111,6 +113,12 @@ const Products = () => {
           SECTION HEADING
       ===================================================== */}
 
+      <SEO
+        title="HydroFit Products | Dumbbell Water Bottles"
+        description="Explore the HydroFit collection — dumbbell water bottles, personalized bottles, and bottle + bag options designed for hydration and an active lifestyle."
+        canonical="https://www.hydrofit.org.in/products"
+      />
+
       <section id="products" className="scroll-mt-[112px]">
         <SectionHeading
           number="01"
@@ -144,6 +152,8 @@ const Products = () => {
                 key={product.id}
                 className="group overflow-hidden border border-[#DAD8D0] bg-[#F7F6F2]"
               >
+                <ProductSchema product={product} />
+
                 {/* =================================================
                     PRODUCT IMAGE
                 ================================================= */}

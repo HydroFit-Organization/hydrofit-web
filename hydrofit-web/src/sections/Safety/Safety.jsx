@@ -37,7 +37,7 @@ const Safety = () => {
           <>
             TRANSFORM
             <br />
-            <span className="text-[#0B8F63]">RESPONSIBLY.</span>
+            <span className="text-[#0B8F63] ">RESPONSIBLY.</span>
           </>
         }
         description="HydroFit changes purpose through a defined transformation process. Safety comes first at every stage."
