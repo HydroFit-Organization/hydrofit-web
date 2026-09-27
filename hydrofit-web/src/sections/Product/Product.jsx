@@ -11,7 +11,7 @@ const products = [
     description:
       "A stronger, more structured expression of the HydroFit form — built for everyday hydration and an active lifestyle.",
     image:
-      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790495923/ChatGPT_Image_Sep_27_2026_01_28_24_PM_kdtctz.png",
     specs: ["280 MM", "Ø45 MM GRIP", "100 MM MAX"],
   },
   {
@@ -22,7 +22,7 @@ const products = [
     description:
       "A refined interpretation of the HydroFit form — designed for comfortable everyday hydration and effortless carry.",
     image:
-      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+      "https://res.cloudinary.com/dasvdkncm/image/upload/v1790498952/ChatGPT_Image_Sep_27_2026_02_18_42_PM_uugatx.png",
     specs: ["280 MM", "Ø45 MM GRIP", "100 MM MAX"],
   },
 ];
@@ -142,81 +142,80 @@ const Product = () => {
                   {/* =========================
                       PRODUCT IMAGE
                   ========================= */}
+                  {/* PRODUCT IMAGE */}
                   <div
-                    className={`relative min-h-[520px] overflow-hidden border-t border-[#D4D2CA] lg:min-h-0 lg:border-t-0 ${
+                    className={`relative min-h-[520px] overflow-hidden bg-[#E9E7DE] lg:min-h-0 ${
                       isReversed
                         ? "lg:order-1 lg:border-r"
                         : "lg:order-2 lg:border-l"
                     }`}
                   >
-                    {/* Top Technical Label */}
-                    <div className="absolute left-6 top-6 z-20 sm:left-7 sm:top-7">
+                    {/* Technical Label */}
+                    <div className="absolute left-6 top-6 z-30 sm:left-7 sm:top-7">
                       <span className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
                         THE HYDROFIT
                       </span>
                     </div>
 
                     {/* Measurement */}
-                    <div className="absolute right-6 top-6 z-20 sm:right-7 sm:top-7">
+                    <div className="absolute right-6 top-6 z-30 sm:right-7 sm:top-7">
                       <span className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#77766F]">
                         280 MM
                       </span>
                     </div>
 
-                    {/* Background Typography */}
+                    {/* Background Text */}
                     <span
                       className="
-                        pointer-events-none
-                        absolute
-                        left-1/2
-                        top-1/2
-                        -translate-x-1/2
-                        -translate-y-1/2
-                        whitespace-nowrap
-                        font-[Sora]
-                        text-[80px]
-                        font-semibold
-                        tracking-[-0.1em]
-                        text-black/[0.035]
-                        sm:text-[120px]
-                        lg:text-[110px]
-                        xl:text-[150px]
-                      "
+      pointer-events-none
+      absolute
+      left-1/2
+      top-1/2
+      z-0
+      -translate-x-1/2
+      -translate-y-1/2
+      whitespace-nowrap
+      font-[Sora]
+      text-[80px]
+      font-semibold
+      tracking-[-0.1em]
+      text-black/[0.035]
+      sm:text-[120px]
+      lg:text-[110px]
+      xl:text-[150px]
+    "
                     >
                       HYDROFIT
                     </span>
 
-                    {/* Same Image Container For Both */}
-                    <div className="relative flex h-full min-h-[520px] items-center justify-center px-8 py-16 sm:px-12 lg:min-h-0 lg:px-14 lg:py-20 xl:px-20">
-                      <div className="relative flex h-[390px] w-full items-center justify-center sm:h-[430px] lg:h-[440px] xl:h-[470px]">
-                        <img
-                          src={product.image}
-                          alt={product.title}
-                          className="
-                            relative
-                            z-10
-                            h-full
-                            w-full
-                            object-contain
-                            transition-transform
-                            duration-700
-                            ease-out
-                            group-hover:scale-[1.025]
-                          "
-                        />
-                      </div>
-                    </div>
+                    {/* IMAGE */}
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="
+      absolute
+      inset-0
+      z-10
+      block
+      h-full
+      w-full
+      object-cover
+    "
+                      onError={(e) => {
+                        console.error("HydroFit image failed:", product.image);
+                      }}
+                    />
 
-                    {/* Bottom Technical Information */}
-                    <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-[#D4D2CA] px-6 py-4 sm:px-7">
-                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#77766F] sm:text-[8px] sm:tracking-[0.18em]">
+                    {/* Bottom Info */}
+                    {/* <div className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-between border-t border-[#D4D2CA] bg-[#E9E7DE]/90 px-6 py-4 sm:px-7">
+                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#77766F] sm:text-[8px]">
                         TRANSFORMABLE WATER BOTTLE
                       </span>
 
-                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#0B8F63] sm:text-[8px] sm:tracking-[0.18em]">
+                      <span className="text-[7px] font-semibold uppercase tracking-[0.16em] text-[#0B8F63] sm:text-[8px]">
                         HYDROFIT
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </article>

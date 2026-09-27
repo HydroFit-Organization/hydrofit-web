@@ -397,11 +397,11 @@ const ProductDetails = () => {
           {/* Concept visual */}
 
           <div className="mt-14 grid gap-4 md:grid-cols-2">
-            <div className="relative min-h-[420px] overflow-hidden bg-[#E9E7DE]">
+            <div className="relative min-h-[450px] overflow-hidden bg-[#E9E7DE]">
               <img
-                src={productImage}
+                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790493578/ChatGPT_Image_Sep_27_2026_12_41_26_PM_skgpfa.png"
                 alt="HydroFit bottle"
-                className="absolute inset-0 h-full w-full object-contain p-16"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 
               <div className="absolute bottom-6 left-6">
@@ -415,11 +415,11 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="relative min-h-[420px] overflow-hidden bg-[#171717]">
+            <div className="relative min-h-[450px] overflow-hidden bg-[#171717]">
               <img
-                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790396051/images-removebg-preview_pnwvte.png"
+                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790497576/hydrofit_fifth_image_bx6bdy.png"
                 alt="HydroFit transformed workout equipment"
-                className="absolute inset-0 h-full w-full object-contain p-16"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 
               <div className="absolute bottom-6 left-6">
@@ -541,7 +541,7 @@ const ProductDetails = () => {
 
               <div className="group relative min-h-[340px] overflow-hidden bg-[#E9E7DE]">
                 <img
-                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png"
+                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790495301/ChatGPT_Image_Sep_27_2026_01_17_11_PM_v2pw7m.png"
                   alt="Using HydroFit as a water bottle"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
@@ -561,7 +561,7 @@ const ProductDetails = () => {
 
               <div className="group relative min-h-[340px] overflow-hidden bg-[#E9E7DE]">
                 <img
-                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png"
+                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790497337/hydrofit_third_image_ykteqn.png"
                   alt="Preparing concrete"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
@@ -581,7 +581,7 @@ const ProductDetails = () => {
 
               <div className="group relative min-h-[340px] overflow-hidden bg-[#E9E7DE] sm:col-span-2">
                 <img
-                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png"
+                  src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790497736/hydrofit_fifth_image_1_chvwis.png"
                   alt="Concrete preparation and filling"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
@@ -592,7 +592,7 @@ const ProductDetails = () => {
                   <span className="font-mono text-[9px]">03</span>
 
                   <h3 className="mt-2 font-[Sora] text-2xl font-semibold">
-                    FILL
+                    TRAIN
                   </h3>
                 </div>
               </div>

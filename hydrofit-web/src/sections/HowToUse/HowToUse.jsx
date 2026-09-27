@@ -53,39 +53,23 @@ const HowToUse = () => {
         {/* Visual + Intro */}
         <div className="grid overflow-hidden border border-white/15 lg:grid-cols-[1.1fr_0.9fr]">
           {/* Image */}
-          <div className="relative min-h-[360px] overflow-hidden bg-[#E9E7DE] sm:min-h-[480px]">
+          <div className="relative aspect-square w-full overflow-hidden bg-[#E9E7DE]">
             <img
-              src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1400&q=85"
-              alt="Reusable water bottle"
+              src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790496855/ChatGPT_Image_Sep_27_2026_01_43_50_PM_zk2ebt.png"
+              alt="HydroFit transformation process"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-black/[0.08]" />
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-black/[0.04]" />
 
-            <div className="absolute left-6 top-6 sm:left-8 sm:top-8">
+            {/* Label */}
+            <div className="absolute left-6 top-6 z-10 sm:left-8 sm:top-8">
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 bg-[#0B8F63]" />
 
                 <span className="text-[8px] font-semibold uppercase tracking-[0.22em] text-[#55544E]">
                   HYDROFIT / INSTRUCTIONS
-                </span>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 left-0 right-0 border-t border-black/10 bg-[#E9E7DE]/90 px-6 py-5 sm:px-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[7px] uppercase tracking-[0.18em] text-[#77766F]">
-                    START HERE
-                  </p>
-
-                  <p className="mt-1 font-[Sora] text-sm font-semibold tracking-[-0.04em] text-[#111111]">
-                    USE. PREPARE. TRANSFORM.
-                  </p>
-                </div>
-
-                <span className="text-[8px] uppercase tracking-[0.18em] text-[#77766F]">
-                  06 / 05
                 </span>
               </div>
             </div>

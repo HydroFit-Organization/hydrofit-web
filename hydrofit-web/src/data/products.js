@@ -8,9 +8,9 @@ const products = [
     price: 399,
 
     images: {
-      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790493849/bottle_image_tlvkyb.png",
       Women:
-        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790499626/ChatGPT_Image_Sep_27__2026__02_13_30_PM-removebg-preview_1_istl1b.png",
     },
 
     editions: ["Men", "Women"],
@@ -27,9 +27,9 @@ const products = [
     price: 499,
 
     images: {
-      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790493849/bottle_image_tlvkyb.png",
       Women:
-        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790499626/ChatGPT_Image_Sep_27__2026__02_13_30_PM-removebg-preview_1_istl1b.png",
     },
 
     editions: ["Men", "Women"],
@@ -47,9 +47,9 @@ const products = [
     price: null,
 
     images: {
-      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+      Men: "https://res.cloudinary.com/dasvdkncm/image/upload/v1790493849/bottle_image_tlvkyb.png",
       Women:
-        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+        "https://res.cloudinary.com/dasvdkncm/image/upload/v1790499626/ChatGPT_Image_Sep_27__2026__02_13_30_PM-removebg-preview_1_istl1b.png",
     },
 
     editions: ["Men", "Women"],

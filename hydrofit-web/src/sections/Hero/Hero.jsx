@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PRODUCT_IMAGES = [
-  "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
-  "https://res.cloudinary.com/dasvdkncm/image/upload/v1790322707/images-removebg-preview_qbhod5.png",
+  "https://res.cloudinary.com/dasvdkncm/image/upload/v1790493849/bottle_image_tlvkyb.png",
+  "https://res.cloudinary.com/dasvdkncm/image/upload/v1790499626/ChatGPT_Image_Sep_27__2026__02_13_30_PM-removebg-preview_1_istl1b.png",
 ];
 
 const productSpecs = [

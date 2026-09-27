@@ -51,7 +51,7 @@ const WhyHydroFit = () => {
 
           <div className="relative min-h-[420px] overflow-hidden bg-[#E9E7DE] sm:min-h-[500px] lg:min-h-[560px]">
             <img
-              src="https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?auto=format&fit=crop&w=1400&q=85"
+              src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790495923/ChatGPT_Image_Sep_27_2026_01_28_24_PM_kdtctz.png"
               alt="Minimal reusable water bottle"
               className="
                 absolute
@@ -160,7 +160,7 @@ const WhyHydroFit = () => {
 
           <div className="group relative h-[260px] overflow-hidden bg-[#E9E7DE] sm:h-[320px]">
             <img
-              src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=85"
+              src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790493482/ChatGPT_Image_Sep_27_2026_12_47_30_PM_xeftsj.png"
               alt="Reusable water bottle lifestyle"
               className="
                 h-full
@@ -196,7 +196,7 @@ const WhyHydroFit = () => {
           <div className="relative flex h-[260px] overflow-hidden bg-[#111111] sm:h-[320px]">
             <div className="absolute right-0 top-0 h-full w-[55%] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85"
+                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790492930/ChatGPT_Image_Sep_27_2026_12_38_30_PM_rf13yb.png"
                 alt="Reusable bottle detail"
                 className="
                   h-full

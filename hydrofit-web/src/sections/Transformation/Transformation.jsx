@@ -64,7 +64,7 @@ const Transformation = () => {
           {/* Image */}
           <div className="relative min-h-[420px] overflow-hidden bg-[#D8D6CF] sm:min-h-[520px] lg:min-h-[620px]">
             <img
-              src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1600&q=85"
+              src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790492483/ChatGPT_Image_Sep_27_2026_12_28_55_PM_siecoe.png"
               alt="Strength training with dumbbells"
               className="absolute inset-0 h-full w-full object-cover grayscale-[20%]"
             />
