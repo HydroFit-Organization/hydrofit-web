@@ -399,7 +399,7 @@ const ProductDetails = () => {
           <div className="mt-14 grid gap-4 md:grid-cols-2">
             <div className="relative min-h-[450px] overflow-hidden bg-[#E9E7DE]">
               <img
-                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790493578/ChatGPT_Image_Sep_27_2026_12_41_26_PM_skgpfa.png"
+                src="https://res.cloudinary.com/dasvdkncm/image/upload/v1790492930/ChatGPT_Image_Sep_27_2026_12_38_30_PM_rf13yb.png"
                 alt="HydroFit bottle"
                 className="absolute inset-0 h-full w-full object-cover"
               />
